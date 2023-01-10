@@ -1,0 +1,27 @@
+:root,
+html[data-theme='light'] {
+	--fontFamily: 'Roboto', sans-serif;
+	--colorPrimary: #020203;
+	--colorSecondary: #FF0101;
+	--bgColorPrimary: #E5E5E5; 
+	--bgColorSecondary: #FBFBFB; 
+	--colorMenu: #FFFFFF; 
+}
+
+%fontType {
+	font-family: var(--fontFamily);
+	font-weight: 500;
+}
+
+html,
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	transition: all 0.3s;
+}
+
+
+body {
+	background-color: var(--bgColorPrimary);
+}
