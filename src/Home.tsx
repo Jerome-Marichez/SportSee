@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./GlobalStyles";
 import useDarkMode from "./hooks/useDarkMode";
-import { lightTheme, darkTheme } from "./components/Themes"
+import { lightTheme, darkTheme } from "./components/themes"
 
 
 import Header from "./components/Header/Header";
@@ -14,7 +14,13 @@ import Title from "./components/Title/Title";
 export default function Home() {
 	const [theme, themeToggler] = useDarkMode();
 
+	const Margin = ({ px } : { px: number }) => {
+		const Margin = styled.div`margin-top: ${px}px;`;
+		return (<Margin />);
+	}
+
 	const DashboardContainer = styled.div`
+		display: flex;
 		background-color: inherit;
 		margin-left: 224px; 
 		margin-top: 69px;
@@ -22,16 +28,18 @@ export default function Home() {
 		margin-bottom: 86px;
 	`;
 
+
 	return (
 		<ThemeProvider theme={theme === true ? darkTheme : lightTheme}>
 			<>
 				<GlobalStyles />
 				<Header />
 				<DashboardContainer>
-					<Title text="Bonjour" textColor="Thomas" />
+					<Title title="Bonjour" titleColor="Thomas" subTitle={"Félicitation ! Vous avez explosé vos objectifs hier 👏"} />
+					<Margin px={72} />
 				</DashboardContainer>
 				<SideBar />
-				
+
 				{/* 
 				Create the button design at the end of the project
 				<button onClick={themeToggler}></button> */}
