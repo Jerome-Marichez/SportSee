@@ -1,26 +1,26 @@
 import React from 'react';
 import logo from "./logo.svg";
 import styled from 'styled-components';
-import * as global from "../global"; 
+
 
 
 const HeaderSportSee = styled.header`
-    background-color: ${global.colorPrimary};
-    color: ${global.colorSecondary};
+    background-color: ${({ theme }) => theme.colorPrimary};
+    color: ${({ theme }) => theme.colorSecondary};
 `;
 
 const Ul = styled.ul`
 display:flex;
 justify-content:space-between;
-`; 
+`;
 
 const Li = styled.li`
 display: flex;
 align-items: center;
 min-height: 91px;
 
-font-family: ${global.fontFamily}; 
-font-weight: ${global.fontWeight};
+font-family: ${({ theme }) => theme.fontFamily}; 
+font-weight: ${({ theme }) => theme.fontWeight};
 font-size: 24px;
 
 cursor: pointer;
@@ -31,7 +31,7 @@ cursor: pointer;
 &:last-child { 
 	padding-right: 87px;
 }
-`; 
+`;
 
 
 export default function Header() {
