@@ -20,7 +20,6 @@ export default function Home() {
 		margin-top: 69px;
 		margin-right: 90px;
 		margin-bottom: 86px;
-		
 	`;
 
 	return (

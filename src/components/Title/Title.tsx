@@ -7,13 +7,12 @@ export default function Title({ text, textColor }) {
 	const H1flex = styled.h1`
 	display:flex;
 	gap: 15px;
+	
 	`
-
 	const Title = styled.div`
 		font-family:  ${({ theme }) => theme.fontFamily};
 		font-style: bold;
-		font-weight: 600;
-		font-family:  ${({ theme }) => theme.fontWeight};
+		font-weight:  ${({ theme }) => theme.fontWeight + 100};
 		font-size: 48px;
 	`;
 
