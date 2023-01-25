@@ -13,15 +13,7 @@ import Title from "./components/Title/Title";
 import ChartBar from "./components/ChartBar/ChartBar";
 import ChartRadar from "./components/ChartRadar/ChartRadar"; 
 
-const DashboardContainer = styled.div`
-		display: flex;
-		flex-direction: column;
-		background-color: inherit;
-		margin-left: 224px; 
-		margin-top: 69px;
-		margin-right: 90px;
-		margin-bottom: 86px;
-	`;
+
 
 export default function Home() {
 	const [theme, themeToggler] = useDarkMode();
@@ -31,11 +23,10 @@ export default function Home() {
 			<>
 				<GlobalStyles />
 				<Header />
-				<DashboardContainer>
+				<div className="main-container">
 					<Title text="Bonjour" textColor="Thomas" subText={"Félicitation ! Vous avez explosé vos objectifs hier 👏"} />
 					<div className="margin-top-77"/>
-				</DashboardContainer>
-				
+				</div>
 				<SideBar />
 
 				{/* 
