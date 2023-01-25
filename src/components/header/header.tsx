@@ -11,12 +11,12 @@ export default function Header() {
 	const HeaderSportSee = styled.header`
 		background-color: ${({ theme }) => theme.colorPrimary};
 		color: ${({ theme }) => theme.colorSecondary};
-		`;
+	`;
 
 	const Ul = styled.ul`
 		display:flex;
 		justify-content:space-between;
-		`;
+	`;
 
 	const Li = styled.li`
 		display: flex;
@@ -35,8 +35,8 @@ export default function Header() {
 		&:last-child { 
 			padding-right: 87px;
 		}
-		`;
-		
+	`;
+
 	return (
 		<HeaderSportSee>
 			<nav>

@@ -38,7 +38,7 @@ export default function Sidebar() {
 	border-radius: 6px;
 	background-color: ${({ theme }) => theme.colorSecondary}; 
 	cursor: pointer;
-`;
+	`;
 
 	const Copyright = styled.div`
 	position: absolute;
@@ -52,7 +52,7 @@ export default function Sidebar() {
 	font-size: 12px;
 	
 	color: ${({ theme }) => theme.colorSecondary}
-`;
+	`;
 
 	return (
 		<SidebarSportSee>

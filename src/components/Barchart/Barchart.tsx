@@ -4,28 +4,27 @@ import styled from "styled-components";
 
 
 
-const Container = styled.div`
-display: flex;
-flex-direction: column;
-background-color: ${({ theme }) => theme.bgContainerColor}}
-`;
-
-const FlexHead = styled.div`
-	display: flex; 
-	flex-direction: row;
-`
-const TitleChart = styled.div`
-
-`
-const Legend = styled.div`
-`
-
-const LegendColor = styled(Legend)`
-
-
-`;
 
 export default function Barchart() {
+
+	const Container = styled.div`
+	display: flex;
+	flex-direction: column;
+	background-color: ${({ theme }) => theme.bgContainerColor}}
+	`;
+
+	const FlexHead = styled.div`
+	display: flex; 
+	flex-direction: row;
+	`
+	const TitleChart = styled.div`
+	`;
+	
+	const Legend = styled.div`
+	`;
+
+	const LegendColor = styled(Legend)`
+	`;
 
 
 	return (
