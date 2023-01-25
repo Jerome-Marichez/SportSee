@@ -8,17 +8,33 @@ import styled from 'styled-components';
 
 export default function Header() {
 
-	const HeaderSportSee = styled.header`
+
+	return (
+		<HeaderSportSee>
+			<nav>
+				<Ul>
+					<Li><img alt="logo" src={logo} /></Li>
+					<Li>Accueil</Li>
+					<Li>Profil</Li>
+					<Li>Réglage</Li>
+					<Li>Communauté</Li>
+				</Ul>
+			</nav>
+		</HeaderSportSee>
+	);
+}
+
+const HeaderSportSee = styled.header`
 		background-color: ${({ theme }) => theme.colorPrimary};
 		color: ${({ theme }) => theme.colorSecondary};
 	`;
 
-	const Ul = styled.ul`
+const Ul = styled.ul`
 		display:flex;
 		justify-content:space-between;
 	`;
 
-	const Li = styled.li`
+const Li = styled.li`
 		display: flex;
 		align-items: center;
 		min-height: 91px;
@@ -36,18 +52,3 @@ export default function Header() {
 			padding-right: 87px;
 		}
 	`;
-
-	return (
-		<HeaderSportSee>
-			<nav>
-				<Ul>
-					<Li><img alt="logo" src={logo} /></Li>
-					<Li>Accueil</Li>
-					<Li>Profil</Li>
-					<Li>Réglage</Li>
-					<Li>Communauté</Li>
-				</Ul>
-			</nav>
-		</HeaderSportSee>
-	);
-}

@@ -10,7 +10,19 @@ import bodyBuilding from "./bodybuilding.svg";
 
 export default function Sidebar() {
 
-	const SidebarSportSee = styled.div`
+	return (
+		<SidebarSportSee>
+			<ContainerIcon><img src={meditation}></img></ContainerIcon>
+			<ContainerIcon><img src={swim}></img></ContainerIcon>
+			<ContainerIcon><img src={bike}></img></ContainerIcon>
+			<ContainerIcon><img src={bodyBuilding}></img></ContainerIcon>
+			<Copyright>Copyright, SportSee 2020</Copyright>
+		</SidebarSportSee>
+	);
+}
+
+
+const SidebarSportSee = styled.div`
 	position: fixed;
 	left: 0;
 	top: 0;
@@ -28,7 +40,7 @@ export default function Sidebar() {
 	width: 117px;
 	`;
 
-	const ContainerIcon = styled.div`
+const ContainerIcon = styled.div`
 	display:flex;
 	justify-content: center;
 
@@ -40,7 +52,7 @@ export default function Sidebar() {
 	cursor: pointer;
 	`;
 
-	const Copyright = styled.div`
+const Copyright = styled.div`
 	position: absolute;
 	bottom: 120px;
 	width: 150px;
@@ -53,14 +65,3 @@ export default function Sidebar() {
 	
 	color: ${({ theme }) => theme.colorSecondary}
 	`;
-
-	return (
-		<SidebarSportSee>
-			<ContainerIcon><img src={meditation}></img></ContainerIcon>
-			<ContainerIcon><img src={swim}></img></ContainerIcon>
-			<ContainerIcon><img src={bike}></img></ContainerIcon>
-			<ContainerIcon><img src={bodyBuilding}></img></ContainerIcon>
-			<Copyright>Copyright, SportSee 2020</Copyright>
-		</SidebarSportSee>
-	);
-}

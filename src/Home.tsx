@@ -10,17 +10,11 @@ import { lightTheme, darkTheme } from "./components/themes"
 import Header from "./components/Header/Header";
 import SideBar from "./components/Sidebar/Siderbar";
 import Title from "./components/Title/Title";
-import Barchart from "./components/Barchart/Barchart";
+import BarChart from "./components/BarChart/BarChart";
+import MarginTop from "./components/Margin/Margin";
 
-export default function Home() {
-	const [theme, themeToggler] = useDarkMode();
 
-	const Margin = ({ px } : { px: number }) => {
-		const Margin = styled.div`margin-top: ${px}px;`;
-		return (<Margin />);
-	}
-
-	const DashboardContainer = styled.div`
+const DashboardContainer = styled.div`
 		display: flex;
 		background-color: inherit;
 		margin-left: 224px; 
@@ -29,6 +23,8 @@ export default function Home() {
 		margin-bottom: 86px;
 	`;
 
+export default function Home() {
+	const [theme, themeToggler] = useDarkMode();
 
 	return (
 		<ThemeProvider theme={theme === true ? darkTheme : lightTheme}>
@@ -36,9 +32,9 @@ export default function Home() {
 				<GlobalStyles />
 				<Header />
 				<DashboardContainer>
-					<Title title="Bonjour" titleColor="Thomas" subTitle={"Félicitation ! Vous avez explosé vos objectifs hier 👏"} />
-					<Margin px={72} />
-					<Barchart/>
+					<Title text="Bonjour" textColor="Thomas" subText={"Félicitation ! Vous avez explosé vos objectifs hier 👏"} />
+					<MarginTop px={72} />
+					<BarChart />
 				</DashboardContainer>
 				<SideBar />
 
