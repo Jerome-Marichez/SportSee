@@ -11,7 +11,7 @@ html,
 }
 
 .main-container { 
-	.display: flex;
+	display: flex;
 	flex-direction: column;
 	background-color: inherit;
 	margin-left: 224px; 
@@ -21,7 +21,7 @@ html,
 }
 
 		
-.margin-top-72 {
+.margin-top-77 {
 	 margin-top: 77px;
 }
 body {

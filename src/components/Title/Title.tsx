@@ -51,8 +51,8 @@ const FlexTitle = styled.div`
 
 const SubText = styled.h2`
 		display: flex;
-		flex-direction: row;	
 		margin-left: 5px;
+		flex-direction: row;	
 		color: ${({ theme }) => theme.colorPrimary};
 		font-family:${({ theme }) => theme.fontFamily};
 		font-weight:  ${({ theme }) => theme.fontWeight - 100};
