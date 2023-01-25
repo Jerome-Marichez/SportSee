@@ -8,7 +8,8 @@ import styled from "styled-components";
  * @returns A component which will do a margin top
  */
 
+const Margin = styled.div`margin-top: ${props => props.px}px;`;
+
 export default function MarginTop({ px }: { px: number })  {
-	const Margin = styled.div`margin-top: ${px}px;`;
-	return (<Margin />);
+	return (<Margin px={px} />);
 }

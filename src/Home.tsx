@@ -16,6 +16,7 @@ import MarginTop from "./components/Margin/Margin";
 
 const DashboardContainer = styled.div`
 		display: flex;
+		flex-direction: column;
 		background-color: inherit;
 		margin-left: 224px; 
 		margin-top: 69px;
