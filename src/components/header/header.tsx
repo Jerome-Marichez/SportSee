@@ -4,38 +4,39 @@ import styled from 'styled-components';
 
 
 
-const HeaderSportSee = styled.header`
-    background-color: ${({ theme }) => theme.colorPrimary};
-    color: ${({ theme }) => theme.colorSecondary};
-`;
-
-const Ul = styled.ul`
-display:flex;
-justify-content:space-between;
-`;
-
-const Li = styled.li`
-display: flex;
-align-items: center;
-min-height: 91px;
-
-font-family: ${({ theme }) => theme.fontFamily}; 
-font-weight: ${({ theme }) => theme.fontWeight};
-font-size: 24px;
-
-cursor: pointer;
-
-&:first-child {
-	padding-left: 28px;
-}
-&:last-child { 
-	padding-right: 87px;
-}
-`;
 
 
 export default function Header() {
 
+	const HeaderSportSee = styled.header`
+		background-color: ${({ theme }) => theme.colorPrimary};
+		color: ${({ theme }) => theme.colorSecondary};
+		`;
+
+	const Ul = styled.ul`
+		display:flex;
+		justify-content:space-between;
+		`;
+
+	const Li = styled.li`
+		display: flex;
+		align-items: center;
+		min-height: 91px;
+
+		font-family: ${({ theme }) => theme.fontFamily}; 
+		font-weight: ${({ theme }) => theme.fontWeight};
+		font-size: 24px;
+
+		cursor: pointer;
+
+		&:first-child {
+			padding-left: 28px;
+		}
+		&:last-child { 
+			padding-right: 87px;
+		}
+		`;
+		
 	return (
 		<HeaderSportSee>
 			<nav>

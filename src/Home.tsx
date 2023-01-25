@@ -37,6 +37,7 @@ export default function Home() {
 				<DashboardContainer>
 					<Title title="Bonjour" titleColor="Thomas" subTitle={"Félicitation ! Vous avez explosé vos objectifs hier 👏"} />
 					<Margin px={72} />
+					<BarChart/>
 				</DashboardContainer>
 				<SideBar />
 

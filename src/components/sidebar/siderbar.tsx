@@ -7,25 +7,28 @@ import bike from "./bike.svg";
 import bodyBuilding from "./bodybuilding.svg";
 
 
-const SidebarSportSee = styled.div`
-    position: fixed;
-    left: 0;
-    top: 0;
-    z-index: -1;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    justify-content: center;
-    
-    height: 100%;
-    background-color: ${({ theme }) => theme.colorPrimary}; 
-    
-    width: 117px;
-`;
+export default function Sidebar() {
 
-const ContainerIcon = styled.div`
+	const SidebarSportSee = styled.div`
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: -1;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
+	justify-content: center;
+	
+	height: 100%;
+	background-color: ${({ theme }) => theme.colorPrimary}; 
+	
+	width: 117px;
+	`;
+
+	const ContainerIcon = styled.div`
 	display:flex;
 	justify-content: center;
 
@@ -37,7 +40,7 @@ const ContainerIcon = styled.div`
 	cursor: pointer;
 `;
 
-const Copyright = styled.div`
+	const Copyright = styled.div`
 	position: absolute;
 	bottom: 120px;
 	width: 150px;
@@ -50,9 +53,6 @@ const Copyright = styled.div`
 	
 	color: ${({ theme }) => theme.colorSecondary}
 `;
-
-
-export default function Sidebar() {
 
 	return (
 		<SidebarSportSee>
