@@ -4,7 +4,7 @@ import styled from "styled-components";
 /**
  * 
  * @param px This is the margin-top (px size)
- * @example <Margin px={50}/>
+ * @example <MarginTop px={50}/>
  * @returns A component which will do a margin top
  */
 
