@@ -3,7 +3,7 @@ import React from "react";
 import styled from "styled-components";
 
 
-export default function BarChart() {
+export default function ChartBar() {
 
 	return (
 		<Container>

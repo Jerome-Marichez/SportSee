@@ -10,9 +10,8 @@ import { lightTheme, darkTheme } from "./components/themes"
 import Header from "./components/Header/Header";
 import SideBar from "./components/Sidebar/Siderbar";
 import Title from "./components/Title/Title";
-import BarChart from "./components/BarChart/BarChart";
-import MarginTop from "./components/Margin/Margin";
-
+import ChartBar from "./components/ChartBar/ChartBar";
+import ChartRadar from "./components/ChartRadar/ChartRadar"; 
 
 const DashboardContainer = styled.div`
 		display: flex;
@@ -34,9 +33,9 @@ export default function Home() {
 				<Header />
 				<DashboardContainer>
 					<Title text="Bonjour" textColor="Thomas" subText={"Félicitation ! Vous avez explosé vos objectifs hier 👏"} />
-					<MarginTop px={72} />
-					<BarChart />
+					<div className="margin-top-77"/>
 				</DashboardContainer>
+				
 				<SideBar />
 
 				{/* 

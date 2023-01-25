@@ -2,7 +2,7 @@ import React from "react";
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts';
 
 
-export default function RadarCardChart() {
+export default function ChartRadar() {
 	const data = [
 		{
 			subject: 'Math',
@@ -44,6 +44,7 @@ export default function RadarCardChart() {
 
 
 	return (
+
 		<ResponsiveContainer width="100%" height="100%">
 			<RadarChart cx="50%" cy="50%" outerRadius="80%" data={data}>
 				<PolarGrid />
@@ -52,5 +53,6 @@ export default function RadarCardChart() {
 				<Radar name="Mike" dataKey="A" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
 			</RadarChart>
 		</ResponsiveContainer>
+
 	)
 }

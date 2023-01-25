@@ -10,7 +10,9 @@ html,
 	transition: all 0.15s;
 }
 
-
+.margin-top-72 {
+	 margin-top: 77px;
+}
 body {
 	background-color: ${({ theme }) => theme.bgColor};
 }`;
