@@ -19,36 +19,35 @@ interface TextProps {
 
 export default function Title({ text, textColor, subText } : TextProps) {
 	return ( 
-		<Flex>
-			<H1><Text>{text}</Text><TextColor>{textColor}</TextColor></H1>
+		<FlexTitle>
+			<h1>{text}<div className="color">{textColor}</div></h1>
 			{subText ? <SubText>{subText}</SubText> : null}
-		</Flex>
+		</FlexTitle>
 	);
 }
 
-const Flex = styled.div`
+const FlexTitle = styled.div`
 	display:flex;
 	flex-direction: column;
 	gap: 41px;
-	`;
 
-const H1 = styled.h1`
+	h1 {
 		display: flex;
 		flex-direction: row;
 		gap: 15px;
-	`;
 
-const Text = styled.div`
 		font-family:  ${({ theme }) => theme.fontFamily};
 		font-style: bold;
 		font-weight:  ${({ theme }) => theme.fontWeight + 50};
 		font-size: 48px;
-	`;
+	}
 
-const TextColor = styled(Text)`
+	
+
+	.color {
 		color: ${({ theme }) => theme.colorThird};
+	}
 	`;
-
 
 const SubText = styled.h2`
 		display: flex;

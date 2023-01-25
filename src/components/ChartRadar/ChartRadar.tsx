@@ -56,3 +56,9 @@ export default function ChartRadar() {
 
 	)
 }
+
+
+const CardRadar = styled.div`
+		background
+
+`; 

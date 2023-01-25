@@ -38,7 +38,7 @@ const SidebarSportSee = styled.div`
 	background-color: ${({ theme }) => theme.colorPrimary}; 
 	
 	width: 117px;
-	`;
+`;
 
 const ContainerIcon = styled.div`
 	display:flex;
@@ -50,7 +50,7 @@ const ContainerIcon = styled.div`
 	border-radius: 6px;
 	background-color: ${({ theme }) => theme.colorSecondary}; 
 	cursor: pointer;
-	`;
+`;
 
 const Copyright = styled.div`
 	position: absolute;
@@ -64,4 +64,4 @@ const Copyright = styled.div`
 	font-size: 12px;
 	
 	color: ${({ theme }) => theme.colorSecondary}
-	`;
+`;

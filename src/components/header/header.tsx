@@ -3,21 +3,18 @@ import logo from "./logo.svg";
 import styled from 'styled-components';
 
 
-
-
-
 export default function Header() {
-	
+
 	return (
 		<HeaderSportSee>
 			<nav>
-				<Ul>
-					<Li><img alt="logo" src={logo} /></Li>
-					<Li>Accueil</Li>
-					<Li>Profil</Li>
-					<Li>Réglage</Li>
-					<Li>Communauté</Li>
-				</Ul>
+				<ul>
+					<li><img alt="logo" src={logo} /></li>
+					<li>Accueil</li>
+					<li>Profil</li>
+					<li>Réglage</li>
+					<li>Communauté</li>
+				</ul>
 			</nav>
 		</HeaderSportSee>
 	);
@@ -26,28 +23,31 @@ export default function Header() {
 const HeaderSportSee = styled.header`
 		background-color: ${({ theme }) => theme.colorPrimary};
 		color: ${({ theme }) => theme.colorSecondary};
-	`;
 
-const Ul = styled.ul`
-		display:flex;
-		justify-content:space-between;
-	`;
-
-const Li = styled.li`
-		display: flex;
-		align-items: center;
-		min-height: 91px;
-
-		font-family: ${({ theme }) => theme.fontFamily}; 
-		font-weight: ${({ theme }) => theme.fontWeight};
-		font-size: 24px;
-
-		cursor: pointer;
-
-		&:first-child {
-			padding-left: 28px;
+		ul {
+			display:flex;
+			justify-content:space-between;
 		}
-		&:last-child { 
-			padding-right: 87px;
+
+		li {
+			display: flex;
+			align-items: center;
+			min-height: 91px;
+
+			font-family: ${({ theme }) => theme.fontFamily}; 
+			font-weight: ${({ theme }) => theme.fontWeight};
+			font-size: 24px;
+
+			cursor: pointer;
+
+			&:first-child {
+				padding-left: 28px;
+			}
+			&:last-child { 
+				padding-right: 87px;
 		}
-	`;
+		
+	}
+`;
+
+
