@@ -10,6 +10,7 @@ import { lightTheme, darkTheme } from "./components/themes"
 import Header from "./components/Header/Header";
 import SideBar from "./components/Sidebar/Siderbar";
 import Title from "./components/Title/Title";
+import Barchart from "./components/Barchart/Barchart";
 
 export default function Home() {
 	const [theme, themeToggler] = useDarkMode();
@@ -37,7 +38,7 @@ export default function Home() {
 				<DashboardContainer>
 					<Title title="Bonjour" titleColor="Thomas" subTitle={"Félicitation ! Vous avez explosé vos objectifs hier 👏"} />
 					<Margin px={72} />
-					<BarChart/>
+					<Barchart/>
 				</DashboardContainer>
 				<SideBar />
 
