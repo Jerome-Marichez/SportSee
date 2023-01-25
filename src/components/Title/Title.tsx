@@ -8,8 +8,15 @@ interface TextProps {
 	subTitle?: string; 
 }
 
-export default function Title({title,titleColor,subTitle}:TextProps) {
+/**
+ * 
+ * @param title "This is the Title Text without color"
+ * @param titleColor "This is the Title Text with color (optional parameter)"
+ * @param subTitle "This is the subTitle (optional parameter)"" 
+ * @returns "A component which display the Title and (or not) subTitle"
+ */
 
+export default function Title({title,titleColor,subTitle}:TextProps) {
 
 	const Flex = styled.div`
 	display:flex;
