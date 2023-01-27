@@ -12,7 +12,7 @@ import SideBar from "./components/Sidebar/Siderbar";
 import Title from "./components/Title/Title";
 import ChartBar from "./components/ChartBar/CharBar";
 import ChartRadar from "./components/ChartRadar/ChartRadar";
-
+import ChartScore from "./components/ChartScore/ChartScore";
 
 
 export default function Home() {
@@ -27,6 +27,7 @@ export default function Home() {
 					<Title text="Bonjour" textColor="Thomas" subText={"Félicitation ! Vous avez explosé vos objectifs hier 👏"} />
 					<div className="margin-top-77" />
 					<ChartRadar />
+					<ChartScore />
 				</div>
 			
 				<SideBar />
