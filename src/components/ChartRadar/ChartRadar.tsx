@@ -61,6 +61,7 @@ const CustomRadar = styled.div`
 		
 		min-height: 260px;
 		min-width: 260px;
+	
 
 		
 		opacity: 0.9;

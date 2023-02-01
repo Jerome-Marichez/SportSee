@@ -52,8 +52,9 @@ const CustomScore = styled.div`
 		background: ${({ theme }) => theme.bgContainerColor}; 
 		border-radius: 5px;
 		
-		height: 260px;
-		width: 260px;
+		min-height: 260px;
+		min-width: 260px;
+	
 		opacity: 0.9;
 
 

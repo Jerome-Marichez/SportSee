@@ -26,8 +26,9 @@ const SidebarSportSee = styled.div`
 	position: fixed;
 	left: 0;
 	top: 0;
-	z-index: -1;
+	z-index: 1;
 
+	padding-top: 90px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -43,9 +44,9 @@ const SidebarSportSee = styled.div`
 const ContainerIcon = styled.div`
 	display:flex;
 	justify-content: center;
-
-	width: 64px;
-	height: 64px;
+	
+	min-width: 64px;
+	min-height: 64px;
 
 	border-radius: 6px;
 	background-color: ${({ theme }) => theme.colorSecondary}; 
@@ -54,7 +55,8 @@ const ContainerIcon = styled.div`
 
 const Copyright = styled.div`
 	position: absolute;
-	bottom: 120px;
+	z-index: -2;
+	bottom: 100px;
 	width: 150px;
 	transform: rotate(270deg);
 

@@ -13,24 +13,44 @@ body {
 	background-color: ${({ theme }) => theme.bgColor};
 }
 
+
 .main-container { 
-	display: flex;
-	flex-direction: column;
 	background-color: inherit;
-	margin-left: 224px; 
-	margin-top: 69px;
+	padding-top: 90px;
+	margin-left: 210px; 
+	margin-top: 50px;
 	margin-right: 90px;
 	margin-bottom: 88px;
 }
-		
-.margin-top-77 {
-	 margin-top: 77px;
+
+
+.home-container {
+
+	display:flex;
+	flex-direction:row;
+
+	.left-container {
+		display: flex;
+		flex-direction: column;
+		gap: 30px;
+	}
+
+
+	.right-container { 
+		display: flex;
+		flex-direction: column;
+	} 
+
+	
+	.cards-container { 
+		justify-content: space-around;
+		display: flex;
+		flex-direction: row;
+		gap: 30px;
+		flex-wrap: wrap;
+	}
 }
 
-.cards-container { 
-	display: flex;
-	flex-direction: row;
-	gap: 30px;
-	flex-wrap: wrap;
-}
+
+
 `;

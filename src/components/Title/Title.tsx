@@ -29,12 +29,12 @@ export default function Title({ text, textColor, subText } : TextProps) {
 const FlexTitle = styled.div`
 	display:flex;
 	flex-direction: column;
-	gap: 41px;
-
+	gap: 20px;
+	margin-bottom: 70px;
 	h1 {
 		display: flex;
 		flex-direction: row;
-		gap: 15px;
+		gap: 10px;
 
 		color: ${({ theme }) => theme.colorPrimary};
 		font-family:  ${({ theme }) => theme.fontFamily};
@@ -52,7 +52,7 @@ const FlexTitle = styled.div`
 
 const SubText = styled.h2`
 		display: flex;
-		margin-left: 5px;
+		margin-left: 2px;
 		flex-direction: row;	
 		color: ${({ theme }) => theme.colorPrimary};
 		font-family:${({ theme }) => theme.fontFamily};

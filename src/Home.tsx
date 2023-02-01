@@ -11,6 +11,7 @@ import Header from "./components/Header/Header";
 import SideBar from "./components/Sidebar/Siderbar";
 import Title from "./components/Title/Title";
 
+import ChartBar from "./components/ChartBar/CharBar";
 import ChartRadar from "./components/ChartRadar/ChartRadar";
 import ChartScore from "./components/ChartScore/ChartScore";
 import ChartLine from "./components/ChartLine/ChartLine";
@@ -25,14 +26,22 @@ export default function Home() {
 				<Header />
 				<div className="main-container">
 					<Title text="Bonjour" textColor="Thomas" subText={"Félicitation ! Vous avez explosé vos objectifs hier 👏"} />
-					<div className="margin-top-77" />
 
-					<div className="cards-container">
-						<ChartRadar />
-						<ChartScore />
-						<ChartLine />
+					<div className="home-container">
+						<div className="left-container">
+							<ChartBar />
+							<div className="cards-container">
+								<ChartRadar />
+								<ChartScore />
+								<ChartLine />
+							</div>
+						</div>
+
+						<div className="right-container">
+							<p>test</p>
+						</div>
 					</div>
-					
+
 				</div>
 
 				<SideBar />
