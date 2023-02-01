@@ -26,11 +26,15 @@ export default function Home() {
 				<div className="main-container">
 					<Title text="Bonjour" textColor="Thomas" subText={"Félicitation ! Vous avez explosé vos objectifs hier 👏"} />
 					<div className="margin-top-77" />
-					<ChartRadar />
-					<ChartScore />
-					<ChartLine />
+
+					<div className="cards-container">
+						<ChartRadar />
+						<ChartScore />
+						<ChartLine />
+					</div>
+					
 				</div>
-			
+
 				<SideBar />
 
 				{/* 

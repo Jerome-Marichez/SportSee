@@ -59,8 +59,10 @@ const CustomRadar = styled.div`
 		background: ${({ theme }) => theme.colorPrimary}; 
 		border-radius: 5px;
 		
-		height: 260px;
-		width: 260px;
+		min-height: 260px;
+		min-width: 260px;
+
+		
 		opacity: 0.9;
 
 		tspan,.tspan {

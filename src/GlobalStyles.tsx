@@ -9,6 +9,10 @@ html,
 	box-sizing: border-box;
 }
 
+body {
+	background-color: ${({ theme }) => theme.bgColor};
+}
+
 .main-container { 
 	display: flex;
 	flex-direction: column;
@@ -18,11 +22,15 @@ html,
 	margin-right: 90px;
 	margin-bottom: 88px;
 }
-
 		
 .margin-top-77 {
 	 margin-top: 77px;
 }
-body {
-	background-color: ${({ theme }) => theme.bgColor};
-}`;
+
+.cards-container { 
+	display: flex;
+	flex-direction: row;
+	gap: 30px;
+	flex-wrap: wrap;
+}
+`;
