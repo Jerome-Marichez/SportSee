@@ -10,10 +10,10 @@ import { lightTheme, darkTheme } from "./components/themes"
 import Header from "./components/Header/Header";
 import SideBar from "./components/Sidebar/Siderbar";
 import Title from "./components/Title/Title";
-import ChartBar from "./components/ChartBar/CharBar";
+
 import ChartRadar from "./components/ChartRadar/ChartRadar";
 import ChartScore from "./components/ChartScore/ChartScore";
-
+import ChartLine from "./components/ChartLine/ChartLine";
 
 export default function Home() {
 	const [theme, themeToggler] = useDarkMode();
@@ -28,6 +28,7 @@ export default function Home() {
 					<div className="margin-top-77" />
 					<ChartRadar />
 					<ChartScore />
+					<ChartLine />
 				</div>
 			
 				<SideBar />

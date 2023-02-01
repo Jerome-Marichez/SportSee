@@ -10,11 +10,11 @@ interface TextProps {
 
 /**
  * 
- * @param text This is the Text without color render as a h1 
- * @param textColor This is the Text with color render as a h1 (optional parameter)
+ * @param text This is the Text with default color render as a h1 
+ * @param textColor This is the Text with 2nd color render as a h1 (optional parameter)
  * @param subText This is the sub text render as a h2 (optional parameter)
  * @example <Title text="Hello" textColor="Paul" subText="This is a message."/>
- * @returns A component which display the Title and (or not) subTitle
+ * @returns A component which display the Title
  */
 
 export default function Title({ text, textColor, subText } : TextProps) {
@@ -36,6 +36,7 @@ const FlexTitle = styled.div`
 		flex-direction: row;
 		gap: 15px;
 
+		color: ${({ theme }) => theme.colorPrimary};
 		font-family:  ${({ theme }) => theme.fontFamily};
 		font-style: bold;
 		font-weight:  ${({ theme }) => theme.fontWeight + 50};

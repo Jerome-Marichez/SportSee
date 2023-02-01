@@ -3,8 +3,6 @@ import styled from "styled-components";
 import { PieChart, Pie, Sector, Cell, ResponsiveContainer } from 'recharts';
 
 
-
-
 export default function ChartScore() {
 
 
@@ -54,7 +52,7 @@ const CustomScore = styled.div`
 		background: ${({ theme }) => theme.bgContainerColor}; 
 		border-radius: 5px;
 		
-		height: 250px;
+		height: 260px;
 		width: 260px;
 		opacity: 0.9;
 
@@ -64,6 +62,7 @@ const CustomScore = styled.div`
 			margin-top: 24px;
 			margin-left: 24px;
 
+			color: ${({ theme }) => theme.colorPrimary};
 			font-family: ${({ theme }) => theme.fontFamily};
 			font-size: 15px; 
 			font-weight: ${({ theme }) => theme.fontWeight + 200};
@@ -78,7 +77,7 @@ const CustomScore = styled.div`
 			gap: 5px;
 			position: absolute;
 			content: "";
-			width: 55%;
+			width: 60%;
 			height: 60%;
 			top: 50%;
   			left: 50%;
@@ -91,6 +90,7 @@ const CustomScore = styled.div`
 				font-family: ${({ theme }) => theme.fontFamily};
 				font-size: 26px; 
 				font-weight: ${({ theme }) => theme.fontWeight + 200};
+				color: ${({ theme }) => theme.colorPrimary};
 			}
 
 			
@@ -99,6 +99,7 @@ const CustomScore = styled.div`
 				font-family: ${({ theme }) => theme.fontFamily};
 				font-size: 16px; 
 				font-weight: ${({ theme }) => theme.fontWeight + 100};
+				color: ${({ theme }) => theme.colorPrimary};
 				opacity: 0.6;
 				
 

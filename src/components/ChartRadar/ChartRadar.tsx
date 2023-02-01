@@ -40,16 +40,16 @@ export default function ChartRadar() {
 	const polarGrid: boolean = false;
 
 	return (
-			<CustomRadar>
-				<ResponsiveContainer width="100%" height="100%">
-					<RadarChart cx="50%" cy="50%" outerRadius="68%" data={data}>
-						<PolarGrid radialLines={polarGrid} />
-						<PolarAngleAxis dataKey="subject" dy={4} tickSize={15} />
-				       
-						<Radar name="performance" dataKey="A" fill="red" fillOpacity={0.7}/>
-					</RadarChart>
-				</ResponsiveContainer>
-			</CustomRadar>
+		<CustomRadar>
+			<ResponsiveContainer width="100%" height="100%">
+				<RadarChart cx="50%" cy="50%" outerRadius="68%" data={data}>
+					<PolarGrid radialLines={polarGrid} />
+					<PolarAngleAxis dataKey="subject" dy={4} tickSize={15} />
+
+					<Radar name="performance" dataKey="A" fill="red" fillOpacity={0.7} />
+				</RadarChart>
+			</ResponsiveContainer>
+		</CustomRadar>
 	)
 }
 
@@ -59,7 +59,7 @@ const CustomRadar = styled.div`
 		background: ${({ theme }) => theme.colorPrimary}; 
 		border-radius: 5px;
 		
-		height: 250px;
+		height: 260px;
 		width: 260px;
 		opacity: 0.9;
 
