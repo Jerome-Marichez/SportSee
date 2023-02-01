@@ -9,6 +9,7 @@ html,
 	box-sizing: border-box;
 }
 
+
 body {
 	background-color: ${({ theme }) => theme.bgColor};
 }
@@ -25,10 +26,11 @@ body {
 
 
 .home-container {
-
 	display:flex;
 	flex-direction:row;
+	gap: 30px;
 
+	
 	.left-container {
 		display: flex;
 		flex-direction: column;
@@ -39,6 +41,7 @@ body {
 	.right-container { 
 		display: flex;
 		flex-direction: column;
+		gap: 40px;
 	} 
 
 	

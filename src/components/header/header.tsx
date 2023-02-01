@@ -22,12 +22,13 @@ export default function Header() {
 
 const HeaderSportSee = styled.header`
 		z-index: 2;
-		position: absolute;
+		position: fixed;
 		top: 0;
 		width: 100%;
 		background-color: ${({ theme }) => theme.colorPrimary};
 		color: ${({ theme }) => theme.colorSecondary};
 		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+		
 		ul {
 			display:flex;
 			justify-content:space-between;

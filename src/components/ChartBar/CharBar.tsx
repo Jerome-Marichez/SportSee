@@ -21,6 +21,9 @@ export default function ChartBar() {
 const Container = styled.div`
 	display: flex;
 	flex-direction: column;
+
+	height: 260px;
+	width: 100%;
 	background-color: ${({ theme }) => theme.bgContainerColor}}
 	
 	.flex-head { 

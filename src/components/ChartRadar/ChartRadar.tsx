@@ -42,7 +42,7 @@ export default function ChartRadar() {
 	return (
 		<CustomRadar>
 			<ResponsiveContainer width="100%" height="100%">
-				<RadarChart cx="50%" cy="50%" outerRadius="68%" data={data}>
+				<RadarChart cx="50%" cy="50%" outerRadius="66%" data={data}>
 					<PolarGrid radialLines={polarGrid} />
 					<PolarAngleAxis dataKey="subject" dy={4} tickSize={15} />
 
@@ -59,8 +59,8 @@ const CustomRadar = styled.div`
 		background: ${({ theme }) => theme.colorPrimary}; 
 		border-radius: 5px;
 		
-		min-height: 260px;
-		min-width: 260px;
+		height: 260px;
+		width: 260px;
 	
 
 		

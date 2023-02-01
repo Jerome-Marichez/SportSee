@@ -27,7 +27,7 @@ const SidebarSportSee = styled.div`
 	left: 0;
 	top: 0;
 	z-index: 1;
-
+	
 	padding-top: 90px;
 	display: flex;
 	flex-direction: column;
