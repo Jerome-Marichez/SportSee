@@ -21,10 +21,11 @@ export default function ChartBar() {
 const Container = styled.div`
 	display: flex;
 	flex-direction: column;
-
+	border-radius: 5px;
+	
 	height: 260px;
 	width: 100%;
-	background-color: ${({ theme }) => theme.bgContainerColor}}
+	background-color: ${({ theme }) => theme.bgContainerColor};
 	
 	.flex-head { 
 		display: flex; 

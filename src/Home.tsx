@@ -15,6 +15,7 @@ import ChartBar from "./components/ChartBar/CharBar";
 import ChartRadar from "./components/ChartRadar/ChartRadar";
 import ChartScore from "./components/ChartScore/ChartScore";
 import ChartLine from "./components/ChartLine/ChartLine";
+import CardStat from "./components/CardStat/Stats";
 
 export default function Home() {
 	const [theme, themeToggler] = useDarkMode();
@@ -38,7 +39,12 @@ export default function Home() {
 						</div>
 
 						<div className="right-container">
-							<p>test</p>
+							
+							<CardStat type="Calories" weight={50}/>
+							<CardStat type="Proteines" weight={150} />
+							<CardStat type="Glucides" weight={350} />
+							<CardStat type="Lipides" weight={750} />
+
 						</div>
 					</div>
 
