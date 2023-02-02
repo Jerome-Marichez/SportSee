@@ -29,12 +29,14 @@ body {
 	display:flex;
 	flex-direction:row;
 	gap: 30px;
-
+	justify-content: center;
 	
 	.left-container {
 		display: flex;
 		flex-direction: column;
 		gap: 30px;
+		width: 100%;
+		max-width: 1900px;
 	}
 
 
