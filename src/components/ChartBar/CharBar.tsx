@@ -63,25 +63,20 @@ const data = [
 ];
 
 const CustomTooltip = (data: any) => {
-
-	let kg = "";
-	let kCal = "";
-
 	try {
-		kg = data.payload[0]['value'];
-		kCal = data.payload[1]['value'];
+		let kg = data.payload[0]['value'];
+		let kCal = data.payload[1]['value'];
+
+		return (
+			<div className="custom-tooltip">
+				<p className="label">{`${kg}kg`}</p>
+				<p className="label">{`${kCal}Kcal`}</p>
+			</div>
+		);
 	}
 	catch {
 		return null;
 	}
-
-
-	return (
-		<div className="custom-tooltip">
-			<p className="label">{`${kg}kg`}</p>
-			<p className="label">{`${kCal}Kcal`}</p>
-		</div>
-	);
 };
 
 export default function ChartBar() {
