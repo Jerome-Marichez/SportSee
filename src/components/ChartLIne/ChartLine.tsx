@@ -90,8 +90,9 @@ const CustomLine = styled.div`
 		background: ${({ theme }) => theme.colorThird}; 
 		border-radius: 5px;
 		
-		height: 260px;
-		width: 260px;
+		height: 263px;
+		min-width: 260px;
+
 		opacity: 0.9;
 
 		

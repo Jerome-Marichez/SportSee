@@ -59,6 +59,7 @@ export default function CardStat({ type, weight }: CardProps) {
 const Stat = styled.div`
 	height: 124px;
 	min-width: 258px;
+	max-width: 258px;
 	width: 100%; 
 	border-radius: 5px;
 	padding: 32px;

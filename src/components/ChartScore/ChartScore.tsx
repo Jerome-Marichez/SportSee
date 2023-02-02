@@ -52,9 +52,9 @@ const CustomScore = styled.div`
 		background: ${({ theme }) => theme.bgContainerColor}; 
 		border-radius: 5px;
 		
-		height: 260px;
-		width: 260px;
-	
+		height: 263px;
+		min-width: 260px;
+		
 		opacity: 0.9;
 
 
@@ -78,8 +78,9 @@ const CustomScore = styled.div`
 			gap: 5px;
 			position: absolute;
 			content: "";
-			width: 60%;
-			height: 60%;
+
+			width: 150px;
+			height: 150px;
 			top: 50%;
   			left: 50%;
 			transform: translate(-50%, -50%);

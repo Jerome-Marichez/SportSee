@@ -29,21 +29,23 @@ body {
 	display:flex;
 	flex-direction:row;
 	gap: 30px;
-	justify-content: center;
+	justify-content: flex-start;
+	flex-wrap: wrap;
 	
 	.left-container {
 		display: flex;
 		flex-direction: column;
 		gap: 30px;
-		width: 100%;
-		max-width: 1900px;
+		width: 60%;
+		
 	}
 
 
 	.right-container { 
 		display: flex;
 		flex-direction: column;
-		gap: 40px;
+		gap: 39px;
+		width: 30%;
 	} 
 
 	
@@ -53,6 +55,11 @@ body {
 		flex-direction: row;
 		gap: 30px;
 		flex-wrap: wrap;
+
+		> div {
+			flex-basis: 31%
+
+		}
 	}
 }
 
