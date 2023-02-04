@@ -39,6 +39,9 @@ const SidebarSportSee = styled.div`
 	background-color: ${({ theme }) => theme.colorPrimary}; 
 	
 	width: 117px;
+
+	@media screen and (max-width: 1000px) { display: none; }
+
 `;
 
 const ContainerIcon = styled.div`
@@ -51,6 +54,11 @@ const ContainerIcon = styled.div`
 	border-radius: 6px;
 	background-color: ${({ theme }) => theme.colorSecondary}; 
 	cursor: pointer;
+
+	img {
+		max-width: 32px;
+		max-width: 32px;
+	}
 `;
 
 const Copyright = styled.div`

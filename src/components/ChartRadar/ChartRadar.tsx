@@ -60,7 +60,7 @@ const CustomRadar = styled.div`
 		border-radius: 5px;
 		
 		height: 263px;
-		min-width: 260px;
+		min-width: 240px;
 
 		
 		opacity: 0.9;

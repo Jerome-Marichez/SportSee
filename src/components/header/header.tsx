@@ -32,7 +32,10 @@ const HeaderSportSee = styled.header`
 		ul {
 			display:flex;
 			justify-content:space-between;
+			@media screen and (max-width: 1000px) { justify-content: center; gap: 10px;}
 		}
+
+		@media screen and (max-width: 1000px) { img { display: none; } }
 
 		li {
 			display: flex;
@@ -42,15 +45,21 @@ const HeaderSportSee = styled.header`
 			font-family: ${({ theme }) => theme.fontFamily}; 
 			font-weight: ${({ theme }) => theme.fontWeight};
 			font-size: 24px;
-
 			cursor: pointer;
+
+			@media screen and (max-width: 1000px) { font-size: 16px; }
 
 			&:first-child {
 				padding-left: 28px;
+				@media screen and (max-width: 1000px) { padding-left: 0px;}
 			}
 			&:last-child { 
 				padding-right: 87px;
+				@media screen and (max-width: 1000px) { padding-right: 0px;}
 		}
+
+
+		
 		
 	}
 `;

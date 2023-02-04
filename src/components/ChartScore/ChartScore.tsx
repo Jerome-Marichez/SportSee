@@ -53,7 +53,7 @@ const CustomScore = styled.div`
 		border-radius: 5px;
 		
 		height: 263px;
-		min-width: 260px;
+		min-width: 240px;
 		
 		opacity: 0.9;
 
@@ -103,8 +103,6 @@ const CustomScore = styled.div`
 				font-weight: ${({ theme }) => theme.fontWeight + 100};
 				color: ${({ theme }) => theme.colorPrimary};
 				opacity: 0.6;
-				
-
 			}
 		}
 `; 

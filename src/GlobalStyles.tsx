@@ -17,11 +17,19 @@ body {
 
 .main-container { 
 	background-color: inherit;
-	padding-top: 90px;
+	margin-top: 140px;
 	margin-left: 210px; 
-	margin-top: 50px;
+
 	margin-right: 90px;
 	margin-bottom: 88px;
+
+	@media screen and (max-width: 1000px) {
+		margin-top: 120px;
+		margin-left: 10px; 
+		margin-right: 10px;
+		margin-bottom: 40px;
+
+	}
 }
 
 
@@ -32,12 +40,19 @@ body {
 	justify-content: flex-start;
 	flex-wrap: wrap;
 	
+	@media screen and (max-width: 1400px) {
+		flex-direction: column-reverse;
+	}
+
 	.left-container {
 		display: flex;
 		flex-direction: column;
 		gap: 30px;
-		width: 60%;
+		width: 75%;
 		
+		@media screen and (max-width: 1400px) {
+			width: 100%;
+		}
 	}
 
 
@@ -45,19 +60,33 @@ body {
 		display: flex;
 		flex-direction: column;
 		gap: 39px;
-		width: 30%;
+		width: 20%;
+
+		@media screen and (max-width: 1400px) {
+			width: 100%;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			gap: 30px;
+		}
+	
 	} 
 
 	
 	.cards-container { 
 		justify-content: space-around;
 		display: flex;
-		flex-direction: row;
+		flex-direction: column;
 		gap: 30px;
-		flex-wrap: wrap;
+		flex-wrap: nowrap;
 
 		> div {
-			flex-basis: 31%
+			width: 100%;
+		
+		}
+
+		@media screen and (min-width: 1400px) {
+				flex-direction: row;
 
 		}
 	}

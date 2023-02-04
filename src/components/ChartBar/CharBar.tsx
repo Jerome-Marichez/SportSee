@@ -154,7 +154,7 @@ const Container = styled.div`
 				height: 8px;
 				margin-right: 10px;
 				border-radius: 5px;
-				background-color: : ${({ theme }) => theme.colorPrimary};
+				background-color: ${({ theme }) => theme.colorPrimary};
 				
 			}
 			

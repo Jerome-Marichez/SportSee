@@ -35,7 +35,8 @@ const FlexTitle = styled.div`
 		display: flex;
 		flex-direction: row;
 		gap: 10px;
-
+		flex-wrap: wrap; 
+		
 		color: ${({ theme }) => theme.colorPrimary};
 		font-family:  ${({ theme }) => theme.fontFamily};
 		font-style: bold;

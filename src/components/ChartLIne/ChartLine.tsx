@@ -55,7 +55,7 @@ export default function ChartLine() {
 					<Line type="monotone" dataKey="time" stroke="#FFFFFF"
 						strokeWidth={2.5} dot={false}
 					/>
-					
+
 					<XAxis dataKey="time" />
 
 					<Tooltip cursor={false}
@@ -91,7 +91,7 @@ const CustomLine = styled.div`
 		border-radius: 5px;
 		
 		height: 263px;
-		min-width: 260px;
+		min-width: 240px;
 
 		opacity: 0.9;
 
@@ -121,7 +121,7 @@ const CustomLine = styled.div`
 			padding-top: 30px;
 			padding-left: 30px;
 			font-size: 15px;
-			max-width: 70%;
+			max-width: 200px;
 			opacity: 0.5;
 			line-height: 24px;
 		}
