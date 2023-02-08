@@ -93,5 +93,35 @@ body {
 }
 
 
+.loading {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    
+    .cercle { 
+	background-color: black;
+	width: 50px;
+	height: 50px;
+	border-radius: 150px;
+	animation: opacity 1s infinite alternate forwards;
+	
+    }
+    
+    @keyframes opacity {
+  	from {
+  	 opacity: 1;
+	 translateX: 50;
+  	}
+
+  	to {
+   	 opacity: 0;
+ 	}
+    }
+
+}
 
 `;

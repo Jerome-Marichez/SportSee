@@ -23,37 +23,43 @@ export default function Home() {
 	const [theme, themeToggler] = useDarkMode();
 
 	const [data, loading, error] = useData(12);
-	
+
 
 	return (
 		<ThemeProvider theme={theme === true ? darkTheme : lightTheme}>
 			<>
 				<GlobalStyles />
 				<Header />
-				<div className="main-container">
-					<Title text="Bonjour" textColor={loading ? "" : data?.["userInfos"]['firstName']} subText={"Félicitation ! Vous avez explosé vos objectifs hier 👏"} />
+				{loading ?
+					<div className="loading">
+						<div className="cercle"></div>
+						<div className="cercle"></div>
+						<div className="cercle"></div>
+					</div> :
+					<div className="main-container">
+						<Title text="Bonjour" textColor={loading ? "" : data?.["userInfos"]['firstName']} subText={"Félicitation ! Vous avez explosé vos objectifs hier 👏"} />
 
-					<div className="home-container">
-						<div className="left-container">
-							<ChartBar />
-							<div className="cards-container">
-								<ChartRadar />
-								<ChartScore />
-								<ChartLine />
+						<div className="home-container">
+							<div className="left-container">
+								<ChartBar />
+								<div className="cards-container">
+									<ChartRadar />
+									<ChartScore />
+									<ChartLine />
+								</div>
+							</div>
+
+							<div className="right-container">
+
+								<CardStat type="Calories" weight={50} />
+								<CardStat type="Proteines" weight={150} />
+								<CardStat type="Glucides" weight={350} />
+								<CardStat type="Lipides" weight={750} />
+
 							</div>
 						</div>
 
-						<div className="right-container">
-
-							<CardStat type="Calories" weight={50} />
-							<CardStat type="Proteines" weight={150} />
-							<CardStat type="Glucides" weight={350} />
-							<CardStat type="Lipides" weight={750} />
-
-						</div>
-					</div>
-
-				</div>
+					</div>}
 
 				<SideBar />
 

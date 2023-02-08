@@ -35,7 +35,7 @@ export default function useData(userID: number) {
 	const [data, setData] = useState<object>();
 
 
-
+	
 	useEffect(() => {
 
 		(async () => {
@@ -65,7 +65,7 @@ export default function useData(userID: number) {
 			const finalData = tmpData.reduce((acc, obj) => formatData(acc, obj))
 			setData(finalData);
 
-			setLoading(false);
+			setLoading(true);
 		})();
 
 	}, [userID])
