@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-
 interface TextProps {
 	text: string;
 	textColor?: string;
@@ -17,9 +16,11 @@ interface TextProps {
  * @returns A component which display the Title
  */
 
-export default function Title({ text, textColor, subText } : TextProps) {
-	return ( 
+export default function Title({ text, textColor, subText }: TextProps) {
+
+	return (
 		<FlexTitle>
+
 			<h1>{text}<div className="color">{textColor}</div></h1>
 			{subText ? <SubText>{subText}</SubText> : null}
 		</FlexTitle>

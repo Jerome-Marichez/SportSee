@@ -4,7 +4,9 @@ import styled from "styled-components";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./GlobalStyles";
 import useDarkMode from "./hooks/useDarkMode";
+import useData from "./hooks/useData";
 import { lightTheme, darkTheme } from "./components/themes"
+
 
 
 import Header from "./components/Header/Header";
@@ -20,13 +22,16 @@ import CardStat from "./components/CardStat/Stats";
 export default function Home() {
 	const [theme, themeToggler] = useDarkMode();
 
+	const [data, loading, error] = useData(12);
+	
+
 	return (
 		<ThemeProvider theme={theme === true ? darkTheme : lightTheme}>
 			<>
 				<GlobalStyles />
 				<Header />
 				<div className="main-container">
-					<Title text="Bonjour" textColor="Thomas" subText={"Félicitation ! Vous avez explosé vos objectifs hier 👏"} />
+					<Title text="Bonjour" textColor={loading ? "" : data?.["userInfos"]['firstName']} subText={"Félicitation ! Vous avez explosé vos objectifs hier 👏"} />
 
 					<div className="home-container">
 						<div className="left-container">
@@ -39,8 +44,8 @@ export default function Home() {
 						</div>
 
 						<div className="right-container">
-							
-							<CardStat type="Calories" weight={50}/>
+
+							<CardStat type="Calories" weight={50} />
 							<CardStat type="Proteines" weight={150} />
 							<CardStat type="Glucides" weight={350} />
 							<CardStat type="Lipides" weight={750} />

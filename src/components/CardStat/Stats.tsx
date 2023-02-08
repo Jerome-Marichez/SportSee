@@ -1,4 +1,4 @@
-import React from "React";
+import React from "react";
 import styled from "styled-components";
 import calories from "./calories-icon.svg";
 import proteines from "./protein-icon.svg";
