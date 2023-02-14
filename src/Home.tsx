@@ -23,6 +23,7 @@ export default function Home() {
 	const [theme, themeToggler] = useDarkMode();
 
 	const [data, loading, error] = useData(12);
+	console.log(data);
 
 
 	return (
@@ -31,11 +32,8 @@ export default function Home() {
 				<GlobalStyles />
 				<Header />
 				{loading ?
-					<div className="loading">
-						<div className="cercle"></div>
-						<div className="cercle"></div>
-						<div className="cercle"></div>
-					</div> :
+					<div className="loading"></div>
+					 :
 					<div className="main-container">
 						<Title text="Bonjour" textColor={loading ? "" : data?.["userInfos"]['firstName']} subText={"Félicitation ! Vous avez explosé vos objectifs hier 👏"} />
 

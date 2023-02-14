@@ -65,7 +65,7 @@ export default function useData(userID: number) {
 			const finalData = tmpData.reduce((acc, obj) => formatData(acc, obj))
 			setData(finalData);
 
-			setLoading(true);
+			setLoading(false);
 		})();
 
 	}, [userID])

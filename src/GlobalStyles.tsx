@@ -101,25 +101,28 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     position: absolute;
-    
-    .cercle { 
-	background-color: black;
-	width: 50px;
-	height: 50px;
-	border-radius: 150px;
-	animation: opacity 1s infinite alternate forwards;
+    color: ${({ theme }) => theme.colorPrimary};
+    &:after { 
+	content: ".";
+	font-size: 220px;
+	animation: load 0.5s infinite  forwards;
 	
     }
     
-    @keyframes opacity {
-  	from {
-  	 opacity: 1;
-	 translateX: 50;
+    @keyframes load {
+  	30% {
+  	 opacity: 0.5;
+	  content: ".";
   	}
 
-  	to {
-   	 opacity: 0;
+  	60% {
+	  content: "..";
+   	
  	}
+
+	100% {
+		content: "...";
+	}
     }
 
 }
