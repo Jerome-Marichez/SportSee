@@ -33,7 +33,7 @@ export default function useData(userID: number) {
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(false);
 	const [data, setData] = useState<object>();
-	
+
 	useEffect(() => {
 
 		(async () => {
@@ -59,10 +59,10 @@ export default function useData(userID: number) {
 				}
 			}
 
+			const finalData = tmpData.reduce((acc, obj) => formatObject(acc, obj))
+		
 
-			const finalData = tmpData.reduce((acc, obj) => formatData(acc, obj))
 			setData(finalData);
-
 			setLoading(false);
 		})();
 
@@ -77,7 +77,7 @@ export default function useData(userID: number) {
 }
 
 
-function formatData(acc: object, obj: object): object {
+function formatObject(acc: object, obj: object): object {
 	Object.entries(obj).forEach(([key, value]) => {
 
 		if (acc[key] === undefined) {
@@ -94,7 +94,7 @@ function formatData(acc: object, obj: object): object {
 				acc["sessionsWeight"] = value;
 			}
 		}
-	
+
 	});
 	return acc;
 }

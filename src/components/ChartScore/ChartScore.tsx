@@ -1,19 +1,21 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
-import { PieChart, Pie, Sector, Cell, ResponsiveContainer } from 'recharts';
+import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
+
+/**
+ * @param score as a number between 0.00 & 1.00
+ * @example <ChartScore score=0.12 />
+ * @returns A component who display a Chart Score Radial with %
+ */
+
+export default function ChartScore({ score }: { score: number }) {
 
 
-export default function ChartScore() {
-
-
-	const data2 = [
-		{ name: 'Group A', value: 1000 },
+	const data = [
+		{ name: 'Score', value: score * 100 },
 	];
 
-	/* 250px height 260px width
-	/* since we start at angle 70 max 100% = 360+70*/
-
-
+	
 	return (
 		<CustomScore>
 			<div className="title">Score</div>
@@ -21,11 +23,11 @@ export default function ChartScore() {
 			<ResponsiveContainer width="100%" height="100%" id="spin">
 				<PieChart>
 					<Pie
-						data={data2}
+						data={data}
 						cx="50%"
 						cy="50%"
 						startAngle={70}
-						endAngle={360}
+						endAngle={430 * score + 70}
 						innerRadius={"60%"}
 						outerRadius={"70%"}
 						dataKey="value"
@@ -38,7 +40,7 @@ export default function ChartScore() {
 			</ResponsiveContainer>
 
 			<div className="bgScore">
-				<div className="percentage">58%</div>
+				<div className="percentage">{score * 100}%</div>
 				<div className="message">de votre</div>
 				<div className="message">objectif</div>
 			</div>

@@ -33,7 +33,7 @@ export default function Home() {
 				<Header />
 				{loading ?
 					<div className="loading"></div>
-					 :
+					:
 					<div className="main-container">
 						<Title text="Bonjour" textColor={loading ? "" : data?.["userInfos"]['firstName']} subText={"Félicitation ! Vous avez explosé vos objectifs hier 👏"} />
 
@@ -42,7 +42,7 @@ export default function Home() {
 								<ChartBar />
 								<div className="cards-container">
 									<ChartRadar />
-									<ChartScore />
+									<ChartScore score={loading ? "" : data?.["todayScore"]} />
 									<ChartLine />
 								</div>
 							</div>
