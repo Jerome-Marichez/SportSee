@@ -19,8 +19,8 @@ import { useEffect, useState } from "react";
  * - id: 12
  * - keyData: {calorieCount: 1930, proteinCount: 155, carbohydrateCount: 290, lipidCount: 50}
  * - kind: { "1": "cardio","2": "energy","3": "endurance","4": "strength","5": "speed","6": "intensity"}
- * - sessionLength: [{day: 1, sessionLength: 30}]	 
- * - sessionWeight: [{day: "2020-07-01", kilogram: 80, calories: 240}]
+ * - sessionsLength: [{day: 1, sessionLength: 30}]	 
+ * - sessionsWeight: [{day: "2020-07-01", kilogram: 80, calories: 240}]
  * - todayScore: 0.12
  * - userID: 12
  * - userInfos: {firstName: "Karl", lastName: "Dovnieau", age: 31}
@@ -33,8 +33,6 @@ export default function useData(userID: number) {
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(false);
 	const [data, setData] = useState<object>();
-
-
 	
 	useEffect(() => {
 
@@ -79,7 +77,7 @@ export default function useData(userID: number) {
 }
 
 
-function formatData(acc, obj) {
+function formatData(acc: object, obj: object): object {
 	Object.entries(obj).forEach(([key, value]) => {
 
 		if (acc[key] === undefined) {
@@ -90,13 +88,13 @@ function formatData(acc, obj) {
 		if (key === "sessions" && typeof value === "object" && value) {
 			const isInteger = value[0].day;
 			if (!isNaN(isInteger)) {
-				acc["sessionLength"] = value;
+				acc["sessionsLength"] = value;
 			}
 			else {
 				acc["sessionsWeight"] = value;
 			}
 		}
-
+	
 	});
 	return acc;
 }

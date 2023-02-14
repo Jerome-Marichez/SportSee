@@ -6,13 +6,13 @@ import glucides from "./carbs-icon.svg";
 import lipides from "./fat-icon.svg";
 
 
+
 interface CardProps {
 	type: "Calories" | "Proteines" | "Glucides" | "Lipides";
 	weight: number;
 }
 
 /**
- * 
  * @param type Accept 'Calories' | 'Proteines' | 'Glucides' | 'Lipides' as parameter
  * @param weight display the weight 
  * @example <CardStat type="Calories" weight={50}/>
@@ -38,23 +38,34 @@ export default function CardStat({ type, weight }: CardProps) {
 			break;
 	}
 
-	if (isNaN(weight)) { return null } // Check if it's a number at runtime before continue
+	if (isNaN(weight)) { return null } // Check if weight it's a number before return component
 
 	return (
 		<Stat>
 			<div className="flex">
 				<img src={svg}></img>
 				<div className="flex-text">
-					<h3>{weight}kCal</h3>
+					<h3>
+						{type === 'Calories' ? formatCalories(weight) : weight}
+						{type === 'Calories' ? "kCal" : "g"}
+					</h3>
 					<h4>{type}</h4>
 				</div>
 			</div>
 		</Stat>
-
 	)
 
 }
 
+/**
+ * @param weight this is the weight of calories as number
+ * @example formatCalories(1930) -> return 1,930
+ * @returns the weight as a string with a "," after first number
+ */
+function formatCalories(weight: number): string {
+	const numAsString = weight.toString(); 
+	return numAsString.charAt(0) + "," + numAsString.slice(1, numAsString.length);
+}
 
 const Stat = styled.div`
 	height: 124px;

@@ -48,12 +48,10 @@ export default function Home() {
 							</div>
 
 							<div className="right-container">
-
-								<CardStat type="Calories" weight={50} />
-								<CardStat type="Proteines" weight={150} />
-								<CardStat type="Glucides" weight={350} />
-								<CardStat type="Lipides" weight={750} />
-
+								<CardStat type="Calories" weight={loading ? "" : data?.['keyData']['calorieCount']} />
+								<CardStat type="Proteines" weight={loading ? "" : data?.['keyData']['proteinCount']} />
+								<CardStat type="Glucides" weight={loading ? "" : data?.['keyData']['carbohydrateCount']} />
+								<CardStat type="Lipides" weight={loading ? "" : data?.['keyData']['lipidCount']} />
 							</div>
 						</div>
 
