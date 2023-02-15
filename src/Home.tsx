@@ -18,12 +18,10 @@ import CardStat from "./components/CardStat/Stats";
 
 
 export default function Home() {
+	
 	const [theme, themeToggler] = useDarkMode();
-
 	const [data, loading, error] = useData(12);
-	console.log(data);
-
-
+	
 	return (
 		<ThemeProvider theme={theme === true ? darkTheme : lightTheme}>
 			<>
