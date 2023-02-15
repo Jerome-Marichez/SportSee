@@ -3,45 +3,14 @@ import styled from "styled-components";
 import { LineChart, Line, Tooltip, XAxis, ResponsiveContainer } from 'recharts';
 
 
-export default function ChartLine() {
-	const data = [
-		{
-			day: 'L',
-			time: 40,
-
-		},
-		{
-			day: 'M',
-			time: 20,
-
-		},
-		{
-			day: 'M',
-			time: 30,
-
-		},
-		{
-			day: 'J',
-			time: 10,
-
-		},
-		{
-			day: 'V',
-			time: 68,
-
-		},
-		{
-			day: 'S',
-			time: 30,
-
-		},
-		{
-			day: 'D',
-			time: 120,
-
-		},
-	];
-
+/**
+ * 
+ * @param data a Array of object 
+ * 
+ * @example <ChartLine data={[{day: "2020-07-01", kilogram: 80, calories: 240}]}/>
+ * @returns A component who display a ChartLine average time session in minutes (XAxis) and day as legend
+ */
+export default function ChartLine({data}) {
 
 	return (
 		<CustomLine>
@@ -52,11 +21,11 @@ export default function ChartLine() {
 
 				<LineChart data={data} margin={{ bottom: 10 }} >
 
-					<Line type="monotone" dataKey="time" stroke="#FFFFFF"
+					<Line type="monotone" dataKey="sessionLength" stroke="#FFFFFF"
 						strokeWidth={2.5} dot={false}
 					/>
 
-					<XAxis dataKey="time" />
+					<XAxis dataKey="sessionLength" />
 
 					<Tooltip cursor={false}
 						wrapperStyle={{ outline: "none", fontWeight: 600 }}
@@ -130,7 +99,9 @@ const CustomLine = styled.div`
 		.legend { 
 			display: flex;
 			padding-bottom: 25px;
-			justify-content: space-around;
+			justify-content: space-between;
+			padding-left: 10px;
+			padding-right: 10px;	
 			p {		
 				opacity: 0.5;
 				color: ${({ theme }) => theme.colorSecondary};

@@ -43,7 +43,7 @@ export default function Home() {
 								<div className="cards-container">
 									<ChartRadar />
 									<ChartScore score={data?.["todayScore"]} />
-									<ChartLine />
+									<ChartLine data={data?.["sessionsLength"]} />
 								</div>
 							</div>
 

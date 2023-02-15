@@ -14,9 +14,9 @@ import {
 
 /**
  * 
- * @param data a Array of object which can be for example 
+ * @param data a Array of object 
  * 
- * [{day: "2020-07-01", kilogram: 80, calories: 240}]
+ * @example <ChartBar  data={[{day: "2020-07-01", kilogram: 80, calories: 240}]}/>
  * @returns A component who display a ChartBar with a bar (kilogram & calories) per each item providen.
  */
 export default function ChartBar({data} : { data: Array<object> }) {
