@@ -15,7 +15,7 @@ import { useEffect, useState } from "react";
  * 
  * data = the object with all details fetch by all API which are (sample): 
  * 
- * - data: [{value: 120, kind: 2}]
+ * - data: [{value: 120, kind: "energy"}]
  * - id: 12
  * - keyData: {calorieCount: 1930, proteinCount: 155, carbohydrateCount: 290, lipidCount: 50}
  * - kind: { "1": "cardio","2": "energy","3": "endurance","4": "strength","5": "speed","6": "intensity"}
@@ -49,6 +49,7 @@ export default function useData(userID: number) {
 			const responses: Response[] = await Promise.all(promises);
 			let tmpData: any[] = [];
 
+			
 			for (let response of responses) {
 				if (!response.ok) {
 					setError(true);
@@ -59,8 +60,14 @@ export default function useData(userID: number) {
 				}
 			}
 
+			/* Join all data into one and avoid double propriety */ 
 			const finalData = tmpData.reduce((acc, obj) => formatObject(acc, obj))
-		
+
+			/* Replace number kind with the accurate name inside data */ 
+			finalData['data'].map(value => {
+				value['kind'] = finalData['kind'][value['kind']]; 
+			})
+			/* End replace number kind with accurate name inside data */
 
 			setData(finalData);
 			setLoading(false);

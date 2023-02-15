@@ -1,13 +1,10 @@
-import React, { useState, useEffect, MouseEvent } from "react";
+import React from "react";
 
-import styled from "styled-components";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./GlobalStyles";
 import useDarkMode from "./hooks/useDarkMode";
 import useData from "./hooks/useData";
 import { lightTheme, darkTheme } from "./components/themes"
-
-
 
 import Header from "./components/Header/Header";
 import SideBar from "./components/Sidebar/Siderbar";
@@ -18,6 +15,7 @@ import ChartRadar from "./components/ChartRadar/ChartRadar";
 import ChartScore from "./components/ChartScore/ChartScore";
 import ChartLine from "./components/ChartLine/ChartLine";
 import CardStat from "./components/CardStat/Stats";
+
 
 export default function Home() {
 	const [theme, themeToggler] = useDarkMode();
