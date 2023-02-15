@@ -35,23 +35,23 @@ export default function Home() {
 					<div className="loading"></div>
 					:
 					<div className="main-container">
-						<Title text="Bonjour" textColor={loading ? "" : data?.["userInfos"]['firstName']} subText={"Félicitation ! Vous avez explosé vos objectifs hier 👏"} />
+						<Title text="Bonjour" textColor={data?.["userInfos"]['firstName']} subText={"Félicitation ! Vous avez explosé vos objectifs hier 👏"} />
 
 						<div className="home-container">
 							<div className="left-container">
-								<ChartBar />
+								<ChartBar data={data?.["sessionsWeight"]} />
 								<div className="cards-container">
 									<ChartRadar />
-									<ChartScore score={loading ? "" : data?.["todayScore"]} />
+									<ChartScore score={data?.["todayScore"]} />
 									<ChartLine />
 								</div>
 							</div>
 
 							<div className="right-container">
-								<CardStat type="Calories" weight={loading ? "" : data?.['keyData']['calorieCount']} />
-								<CardStat type="Proteines" weight={loading ? "" : data?.['keyData']['proteinCount']} />
-								<CardStat type="Glucides" weight={loading ? "" : data?.['keyData']['carbohydrateCount']} />
-								<CardStat type="Lipides" weight={loading ? "" : data?.['keyData']['lipidCount']} />
+								<CardStat type="Calories" weight={data?.['keyData']['calorieCount']} />
+								<CardStat type="Proteines" weight={data?.['keyData']['proteinCount']} />
+								<CardStat type="Glucides" weight={data?.['keyData']['carbohydrateCount']} />
+								<CardStat type="Lipides" weight={data?.['keyData']['lipidCount']} />
 							</div>
 						</div>
 

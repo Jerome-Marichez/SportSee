@@ -3,84 +3,24 @@ import styled from "styled-components";
 import {
 	BarChart,
 	Bar,
-	Cell,
 	XAxis,
 	YAxis,
 	CartesianGrid,
 	Tooltip,
-	Legend,
-	LabelList,
 	ResponsiveContainer,
 } from 'recharts';
 
 
-const data = [
-	{
-		name: '1',
-		weight: 69,
-		calories: 300,
-	},
-	{
-		name: '2',
-		weight: 69.2,
-		calories: 200,
-	},
-	{
-		name: '3',
-		weight: 70,
-		calories: 700,
-	},
-	{
-		name: '4',
-		weight: 69.5,
-		calories: 500,
-	},
-	{
-		name: '5',
-		weight: 70,
-		calories: 300,
-	},
-	{
-		name: '6',
-		weight: 71,
-		calories: 400,
-	},
-	{
-		name: '7',
-		weight: 70,
-		calories: 1000,
-	},
-	{
-		name: '8',
-		weight: 70.5,
-		calories: 100,
-	},
-	{
-		name: '9',
-		weight: 71,
-		calories: 500,
-	},
-];
 
-const CustomTooltip = (data: any) => {
-	try {
-		let kg = data.payload[0]['value'];
-		let kCal = data.payload[1]['value'];
-
-		return (
-			<div className="custom-tooltip">
-				<p className="label">{`${kg}kg`}</p>
-				<p className="label">{`${kCal}Kcal`}</p>
-			</div>
-		);
-	}
-	catch {
-		return null;
-	}
-};
-
-export default function ChartBar() {
-
+/**
+ * 
+ * @param data a Array of object which can be for example 
+ * 
+ * [{day: "2020-07-01", kilogram: 80, calories: 240}]
+ * @returns A component who display a ChartBar with a bar (kilogram & calories) per each item providen.
+ */
+export default function ChartBar({data} : { data: Array<object> }) {
+	
 	return (
 		<Container>
 			<div className="flex-head">
@@ -104,7 +44,7 @@ export default function ChartBar() {
 						wrapperStyle={{ outline: "none", fontWeight: 600 }}
 						content={<CustomTooltip />}
 					/>
-					<Bar dataKey="weight" name="kg" fill="black" radius={[10, 10, 0, 0]}
+					<Bar dataKey="kilogram" name="kg" fill="black" radius={[10, 10, 0, 0]}
 						barSize={10} />
 					<Bar dataKey="calories" name="kCal" fill="red" radius={[10, 10, 0, 0]}
 						barSize={10} />
@@ -113,6 +53,23 @@ export default function ChartBar() {
 		</Container>
 	)
 }
+
+const CustomTooltip = (data: any) => {
+	try {
+		let kg = data.payload[0]['value'];
+		let kCal = data.payload[1]['value'];
+
+		return (
+			<div className="custom-tooltip">
+				<p className="label">{`${kg}kg`}</p>
+				<p className="label">{`${kCal}Kcal`}</p>
+			</div>
+		);
+	}
+	catch {
+		return null;
+	}
+};
 
 const Container = styled.div`
 	display: flex;
