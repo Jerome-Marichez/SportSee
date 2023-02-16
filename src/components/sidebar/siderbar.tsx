@@ -52,7 +52,7 @@ const ContainerIcon = styled.div`
 	min-height: 64px;
 
 	border-radius: 6px;
-	background-color: ${({ theme }) => theme.colorSecondary}; 
+	background-color: ${({ theme }) => theme.bgColor}; 
 	cursor: pointer;
 
 	img {

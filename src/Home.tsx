@@ -29,12 +29,13 @@ export default function Home() {
 
 	const [data, loading, error] = useData(userID);
 
-	
+
 	return (
 		<ThemeProvider theme={theme === true ? darkTheme : lightTheme}>
 			<>
 				<GlobalStyles />
 				<Header />
+				<div className="theme-btn" onClick={themeToggler}>{theme ? "🌞" : "🌜"}</div>
 				{loading ?
 
 					<div className="loading"></div>
@@ -44,6 +45,7 @@ export default function Home() {
 							<Title text="Bonjour" textColor={data["userInfos"]['firstName']} subText={"Félicitation ! Vous avez explosé vos objectifs hier 👏"} />
 
 							<div className="home-container">
+
 								<div className="left-container">
 									<ChartBar data={data["sessionsWeight"]} />
 									<div className="cards-container">
@@ -64,10 +66,6 @@ export default function Home() {
 						</div>}
 
 				<SideBar />
-
-
-
-				{/* <button onClick={themeToggler}></button> */}
 			</>
 		</ThemeProvider>
 	);

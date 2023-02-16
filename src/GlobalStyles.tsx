@@ -98,6 +98,17 @@ body {
     color: ${({ theme }) => theme.colorPrimary};
 }
 
+.theme-btn { 
+	z-index:1;
+	cursor: pointer;
+	font-size: 40px;
+	position: fixed;
+	bottom: 20px;
+	right: 0px;
+	background-color: none;
+	user-select: none;
+}
+
 .loading {
     display: flex;
     flex-direction: row;

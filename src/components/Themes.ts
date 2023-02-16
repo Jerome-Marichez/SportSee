@@ -5,15 +5,15 @@ export const lightTheme = {
 	colorSecondary: '#FFFFFF',
 	colorThird: '#FF0101',
 	bgContainerColor: "#FBFBFB",
-	bgColor: "#FFFFFF", 
+	bgColor: "#FFFFFF",
 }
 
 export const darkTheme = {
 	fontFamily: 'Roboto, sans-serif',
 	fontWeight: 500,
-	colorPrimary: '#020203',
-	colorSecondary: '#FFFFFF',
+	colorPrimary: '#950101',
+	colorSecondary: 'lightgrey',
 	colorThird: '#FF0101',
-	bgContainerColor: "#FBFBFB",
-	bgColor: "#FFFFFF",
+	bgContainerColor: "#3D0000",
+	bgColor: "#020203",
 }
