@@ -103,8 +103,8 @@ body {
 	cursor: pointer;
 	font-size: 40px;
 	position: fixed;
-	bottom: 20px;
-	right: 0px;
+	bottom: 10px;
+	right: 5px;
 	background-color: none;
 	user-select: none;
 }
