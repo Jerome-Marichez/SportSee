@@ -38,31 +38,31 @@ export default function Home() {
 				<Header />
 				{loading ?
 
-					error ? <div className="error">Error user doesn't exists or SportSee is down :(</div> : <div className="loading"></div>
+					<div className="loading"></div>
 
-					:
-					<div className="main-container">
-						<Title text="Bonjour" textColor={data["userInfos"]['firstName']} subText={"Félicitation ! Vous avez explosé vos objectifs hier 👏"} />
+					: error ? <div className="error">Error user doesn't exists or SportSee is down :(</div> :
+						<div className="main-container">
+							<Title text="Bonjour" textColor={data["userInfos"]['firstName']} subText={"Félicitation ! Vous avez explosé vos objectifs hier 👏"} />
 
-						<div className="home-container">
-							<div className="left-container">
-								<ChartBar data={data["sessionsWeight"]} />
-								<div className="cards-container">
-									<ChartRadar data={data["data"]} />
-									<ChartScore score={data["todayScore"]} />
-									<ChartLine data={data["sessionsLength"]} />
+							<div className="home-container">
+								<div className="left-container">
+									<ChartBar data={data["sessionsWeight"]} />
+									<div className="cards-container">
+										<ChartRadar data={data["data"]} />
+										<ChartScore score={data["todayScore"]} />
+										<ChartLine data={data["sessionsLength"]} />
+									</div>
+								</div>
+
+								<div className="right-container">
+									<CardStat type="Calories" weight={data['keyData']['calorieCount']} />
+									<CardStat type="Proteines" weight={data['keyData']['proteinCount']} />
+									<CardStat type="Glucides" weight={data['keyData']['carbohydrateCount']} />
+									<CardStat type="Lipides" weight={data['keyData']['lipidCount']} />
 								</div>
 							</div>
 
-							<div className="right-container">
-								<CardStat type="Calories" weight={data['keyData']['calorieCount']} />
-								<CardStat type="Proteines" weight={data['keyData']['proteinCount']} />
-								<CardStat type="Glucides" weight={data['keyData']['carbohydrateCount']} />
-								<CardStat type="Lipides" weight={data['keyData']['lipidCount']} />
-							</div>
-						</div>
-
-					</div>}
+						</div>}
 
 				<SideBar />
 

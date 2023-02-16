@@ -41,40 +41,48 @@ export default function useData(userID: number) {
 			setLoading(true);
 			setError(false);
 
-			const userR: Promise<Response> = fetch(`${api_path}/${userID}`);
-			const activityR: Promise<Response> = fetch(`${api_path}/${userID}/activity`);
-			const avgSessionR: Promise<Response> = fetch(`${api_path}/${userID}/average-sessions`);
-			const performanceR: Promise<Response> = fetch(`${api_path}/${userID}/performance`);
-			const promises: Promise<Response>[] = [userR, activityR, avgSessionR, performanceR];
+			try {
+				const userR: Promise<Response> = fetch(`${api_path}/${userID}`);
+				const activityR: Promise<Response> = fetch(`${api_path}/${userID}/activity`);
+				const avgSessionR: Promise<Response> = fetch(`${api_path}/${userID}/average-sessions`);
+				const performanceR: Promise<Response> = fetch(`${api_path}/${userID}/performance`);
+				const promises: Promise<Response>[] = [userR, activityR, avgSessionR, performanceR];
 
-			const responses: Response[] = await Promise.all(promises);
-			let tmpData: any[] = [];
+				const responses: Response[] = await Promise.all(promises);
+				let tmpData: any[] = [];
 
 
-			for (let response of responses) {
-				if (!response.ok) {
-					setError(true);
+
+				for (let response of responses) {
+					if (!response.ok) {
+						setError(true);
+					}
+					else {
+						const json: JSON = await response.json();
+						tmpData.push((json['data']));
+					}
 				}
-				else {
-					const json: JSON = await response.json();
-					tmpData.push((json['data']));
-				}
+
+
+				/* Join all data into one and avoid double propriety */
+				const finalData = tmpData.reduce((acc, obj) => formatObject(acc, obj))
+
+				/* Replace number kind with the accurate name inside data */
+				finalData['data'].map(value => {
+					value['kind'] = finalData['kind'][value['kind']];
+				})
+				/* End replace number kind with accurate name inside data */
+
+				/* sometime todayScore doesn't exists but exists in score propriety so we assign a new propriety todayScore */
+				if (finalData['score']) { finalData['todayScore'] = finalData['score']; }
+
+				setData(finalData);
+				setLoading(false);
+			} catch {
+				setLoading(false);
+				setError(true);
 			}
 
-			/* Join all data into one and avoid double propriety */
-			const finalData = tmpData.reduce((acc, obj) => formatObject(acc, obj))
-
-			/* Replace number kind with the accurate name inside data */
-			finalData['data'].map(value => {
-				value['kind'] = finalData['kind'][value['kind']];
-			})
-			/* End replace number kind with accurate name inside data */
-
-			/* sometime todayScore doesn't exists but exists in score propriety so we assign a new propriety todayScore */
-			if (finalData['score']) { finalData['todayScore'] = finalData['score']; }
-			
-			setData(finalData);
-			setLoading(false);
 		})();
 
 	}, [userID])
