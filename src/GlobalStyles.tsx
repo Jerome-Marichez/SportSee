@@ -24,11 +24,8 @@ body {
 	margin-bottom: 88px;
 
 	@media screen and (max-width: 1000px) {
-		margin-top: 120px;
 		margin-left: 10px; 
 		margin-right: 10px;
-		margin-bottom: 40px;
-
 	}
 }
 

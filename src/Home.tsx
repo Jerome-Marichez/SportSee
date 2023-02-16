@@ -29,8 +29,7 @@ export default function Home() {
 
 	const [data, loading, error] = useData(userID);
 
-	console.log(data);
-
+	
 	return (
 		<ThemeProvider theme={theme === true ? darkTheme : lightTheme}>
 			<>
