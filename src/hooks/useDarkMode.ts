@@ -1,10 +1,10 @@
 import { useState } from "react";
 
 export default function useDarkMode() {
-	const [darkMode, setDarkMode] = useState(true);
+	const [darkMode, setDarkMode] = useState(false);
 
 	const themeToggler = () => {
-		darkMode === true ? setDarkMode(false) : setDarkMode(true);
+		darkMode === false ? setDarkMode(true) : setDarkMode(false);
 	};
 
 	return [
