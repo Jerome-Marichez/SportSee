@@ -15,7 +15,7 @@ export default function ChartScore({ score }: { score: number }) {
 		{ name: 'Score', value: score * 100 },
 	];
 
-	
+	console.log(score);
 	return (
 		<CustomScore>
 			<div className="title">Score</div>

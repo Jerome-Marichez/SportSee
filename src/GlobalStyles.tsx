@@ -92,6 +92,14 @@ body {
 	}
 }
 
+.error {
+    position: absolute;
+    top: 50%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+    color: ${({ theme }) => theme.colorPrimary};
+}
 
 .loading {
     display: flex;

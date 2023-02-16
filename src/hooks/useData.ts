@@ -30,9 +30,10 @@ export default function useData(userID: number) {
 
 	const api_path: string = `http://localhost:3000/user`;
 
+
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(false);
-	const [data, setData] = useState<object>();
+	const [data, setData] = useState<object>({});
 
 	useEffect(() => {
 
@@ -49,7 +50,7 @@ export default function useData(userID: number) {
 			const responses: Response[] = await Promise.all(promises);
 			let tmpData: any[] = [];
 
-			
+
 			for (let response of responses) {
 				if (!response.ok) {
 					setError(true);
@@ -60,15 +61,18 @@ export default function useData(userID: number) {
 				}
 			}
 
-			/* Join all data into one and avoid double propriety */ 
+			/* Join all data into one and avoid double propriety */
 			const finalData = tmpData.reduce((acc, obj) => formatObject(acc, obj))
 
-			/* Replace number kind with the accurate name inside data */ 
+			/* Replace number kind with the accurate name inside data */
 			finalData['data'].map(value => {
-				value['kind'] = finalData['kind'][value['kind']]; 
+				value['kind'] = finalData['kind'][value['kind']];
 			})
 			/* End replace number kind with accurate name inside data */
 
+			/* sometime todayScore doesn't exists but exists in score propriety so we assign a new propriety todayScore */
+			if (finalData['score']) { finalData['todayScore'] = finalData['score']; }
+			
 			setData(finalData);
 			setLoading(false);
 		})();
