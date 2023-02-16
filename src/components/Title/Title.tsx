@@ -38,7 +38,7 @@ const FlexTitle = styled.div`
 		gap: 10px;
 		flex-wrap: wrap; 
 		
-		color: ${({ theme }) => theme.colorPrimary};
+		color: ${({ theme }) => theme.colorFont ? theme.colorFont : theme.colorPrimary};
 		font-family:  ${({ theme }) => theme.fontFamily};
 		font-style: bold;
 		font-weight:  ${({ theme }) => theme.fontWeight + 50};
@@ -56,7 +56,7 @@ const SubText = styled.h2`
 		display: flex;
 		margin-left: 2px;
 		flex-direction: row;	
-		color: ${({ theme }) => theme.colorPrimary};
+		color: ${({ theme }) => theme.colorFont ? theme.colorFont : theme.colorPrimary};
 		font-family:${({ theme }) => theme.fontFamily};
 		font-weight:  ${({ theme }) => theme.fontWeight - 100};
 		font-size: 19px;

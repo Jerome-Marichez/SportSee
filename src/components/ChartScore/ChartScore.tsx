@@ -65,7 +65,7 @@ const CustomScore = styled.div`
 			margin-top: 24px;
 			margin-left: 24px;
 
-			color: ${({ theme }) => theme.colorPrimary};
+			color: ${({ theme }) => theme.colorFont ? theme.colorFont : theme.colorPrimary};
 			font-family: ${({ theme }) => theme.fontFamily};
 			font-size: 15px; 
 			font-weight: ${({ theme }) => theme.fontWeight + 200};
@@ -94,7 +94,7 @@ const CustomScore = styled.div`
 				font-family: ${({ theme }) => theme.fontFamily};
 				font-size: 26px; 
 				font-weight: ${({ theme }) => theme.fontWeight + 200};
-				color: ${({ theme }) => theme.colorPrimary};
+				color: ${({ theme }) => theme.colorFont ? theme.colorFont : theme.colorPrimary};
 			}
 
 			
@@ -103,7 +103,7 @@ const CustomScore = styled.div`
 				font-family: ${({ theme }) => theme.fontFamily};
 				font-size: 16px; 
 				font-weight: ${({ theme }) => theme.fontWeight + 100};
-				color: ${({ theme }) => theme.colorPrimary};
+				color: ${({ theme }) => theme.colorFont ? theme.colorFont : theme.colorPrimary};
 				opacity: 0.6;
 			}
 		}

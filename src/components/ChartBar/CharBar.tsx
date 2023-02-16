@@ -98,7 +98,7 @@ const Container = styled.div`
 		display: flex;
 		flex-direction: row;
 		gap: 20px;
-		color: ${({ theme }) => theme.colorPrimary};
+		color: ${({ theme }) => theme.colorFont ? theme.colorFont : theme.colorPrimary};
 
 		.legend { 
 			margin-right: 10px;

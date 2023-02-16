@@ -97,7 +97,7 @@ const Stat = styled.div`
 		flex-direction: column; 
 		justify-content: space-evenly;
 		font-family: ${({ theme }) => theme.fontFamily};
-		color: ${({ theme }) => theme.colorPrimary};
+		color: ${({ theme }) => theme.colorFont ? theme.colorFont : theme.colorPrimary};
 		h3 {
 			font-size: 20px; 
 			font-weight: ${({ theme }) => theme.fontWeight + 200};
