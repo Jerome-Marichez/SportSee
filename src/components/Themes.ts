@@ -11,9 +11,9 @@ export const lightTheme = {
 export const darkTheme = {
 	fontFamily: 'Roboto, sans-serif',
 	fontWeight: 500,
-	colorPrimary: '#950101',
+	colorPrimary: '#212121',
 	colorSecondary: 'lightgrey',
 	colorThird: '#FF0101',
-	bgContainerColor: "#3D0000",
-	bgColor: "#020203",
+	bgContainerColor: "#3F3F3F",
+	bgColor: "#383838",
 }
