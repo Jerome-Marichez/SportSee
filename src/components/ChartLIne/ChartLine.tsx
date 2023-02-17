@@ -91,7 +91,6 @@ const CustomLine = styled.div`
 			padding-left: 30px;
 			font-size: 15px;
 			max-width: 200px;
-			opacity: 0.5;
 			line-height: 24px;
 		}
 
@@ -103,7 +102,7 @@ const CustomLine = styled.div`
 			padding-left: 10px;
 			padding-right: 10px;	
 			p {		
-				opacity: 0.5;
+				
 				color: ${({ theme }) => theme.colorSecondary};
 				font-weight: ${({ theme }) => theme.fontWeight};
 			}

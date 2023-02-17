@@ -95,7 +95,7 @@ body {
     left: 55%;
     transform: translate(-50%, -50%);
     font-size: 50px;
-    color: ${({ theme }) => theme.colorPrimary};
+    color: ${({ theme }) => theme.colorFont};
 }
 
 .theme-btn { 
