@@ -28,7 +28,7 @@ import { useEffect, useState } from "react";
  */
 export default function useData(userID: number) {
 
-	const api_path: string = `http://localhost:3000/user`;
+	const api_path: string = `https://sport-see-backend-9li7kmslm-jerome-marichez.vercel.app/user`;
 
 
 	const [loading, setLoading] = useState(true);
