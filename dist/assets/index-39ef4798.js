@@ -150,7 +150,7 @@ body {
     left: 55%;
     transform: translate(-50%, -50%);
     font-size: 50px;
-    color: ${({theme:e})=>e.colorPrimary};
+    color: ${({theme:e})=>e.colorFont};
 }
 
 .theme-btn { 
@@ -631,7 +631,6 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
 			padding-left: 30px;
 			font-size: 15px;
 			max-width: 200px;
-			opacity: 0.5;
 			line-height: 24px;
 		}
 
@@ -643,7 +642,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
 			padding-left: 10px;
 			padding-right: 10px;	
 			p {		
-				opacity: 0.5;
+				
 				color: ${({theme:e})=>e.colorSecondary};
 				font-weight: ${({theme:e})=>e.fontWeight};
 			}
