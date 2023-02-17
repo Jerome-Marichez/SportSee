@@ -96,6 +96,11 @@ body {
     transform: translate(-50%, -50%);
     font-size: 50px;
     color: ${({ theme }) => theme.colorFont};
+    		@media screen and (max-width: 1000px)
+			{
+			   left: 50%; font-size: 25px; 
+			}
+
 }
 
 .theme-btn { 
