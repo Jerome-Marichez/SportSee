@@ -21,7 +21,7 @@ import CardStat from "./components/CardStat/Stats";
 export default function Home() {
 
 
-	const [theme, themeToggler] = useDarkMode();
+	const [theme, themeToggler] = useDarkMode(false);
 
 	const [searchParams] = useSearchParams();
 	const id: string | null = searchParams.get("id");
@@ -29,7 +29,7 @@ export default function Home() {
 
 	const [data, loading, error] = useData(userID);
 
-
+	
 	return (
 		<ThemeProvider theme={theme === true ? darkTheme : lightTheme}>
 			<>
