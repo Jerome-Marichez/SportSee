@@ -40,7 +40,7 @@ export default function Home() {
 
 					<div className="loading"></div>
 
-					: error ? <div className="error">Error user doesn't exists or SportSee is down :(</div> :
+					: error ? <div className="error">Error.  User doesn't exists or SportSee is down 😦</div> :
 						<div className="main-container">
 							<Title text="Bonjour" textColor={data["userInfos"]['firstName']} subText={"Félicitation ! Vous avez explosé vos objectifs hier 👏"} />
 
