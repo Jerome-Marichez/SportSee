@@ -77,10 +77,12 @@ export default function useData(userID: number) {
 				if (finalData['score']) { finalData['todayScore'] = finalData['score']; }
 
 				setData(finalData);
-				setLoading(false);
-			} catch {
-				setLoading(false);
+			}
+			catch {
 				setError(true);
+			}
+			finally {
+				setLoading(false);
 			}
 
 		})();
