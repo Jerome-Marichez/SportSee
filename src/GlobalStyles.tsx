@@ -122,7 +122,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     position: absolute;
-    color: ${({ theme }) => theme.colorPrimary};
+    color: ${({ theme }) => theme.colorFont};
     &:after { 
 	content: ".";
 	font-size: 220px;

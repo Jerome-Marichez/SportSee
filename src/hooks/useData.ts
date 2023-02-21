@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
+import mockupData from "../../mockup.json";
 
 /**
  * 
  * @param userID the ID Number of the user to fetch Data
+ * @param ENV_PROD a boolean true to fetch from External API, false to fetch from local MockUp
  * 
  * @example const [data, loading, error] = useData(12);
  * In a tsx code {loading ? "" : data?.["userInfos"]['firstName']}
@@ -26,9 +28,11 @@ import { useEffect, useState } from "react";
  * - userInfos: {firstName: "Karl", lastName: "Dovnieau", age: 31}
 
  */
-export default function useData(userID: number) {
+export default function useData(userID: number, ENV_PROD: boolean = false) {
 
-	const api_path: string = `https://sport-see-backend-9li7kmslm-jerome-marichez.vercel.app/user`;
+	const BASE_URL_DEV = "http://localhost:5173/mockup.json"
+	const BASE_URL_PROD = "https://sport-see-backend-9li7kmslm-jerome-marichez.vercel.app/user"
+	const api_path = ENV_PROD ? BASE_URL_PROD : BASE_URL_DEV;
 
 
 	const [loading, setLoading] = useState(true);
@@ -42,41 +46,51 @@ export default function useData(userID: number) {
 			setError(false);
 
 			try {
-				const userR: Promise<Response> = fetch(`${api_path}/${userID}`);
-				const activityR: Promise<Response> = fetch(`${api_path}/${userID}/activity`);
-				const avgSessionR: Promise<Response> = fetch(`${api_path}/${userID}/average-sessions`);
-				const performanceR: Promise<Response> = fetch(`${api_path}/${userID}/performance`);
-				const promises: Promise<Response>[] = [userR, activityR, avgSessionR, performanceR];
+				if (ENV_PROD) {
+					const userR: Promise<Response> = fetch(`${api_path}/${userID}`);
+					const activityR: Promise<Response> = fetch(`${api_path}/${userID}/activity`);
+					const avgSessionR: Promise<Response> = fetch(`${api_path}/${userID}/average-sessions`);
+					const performanceR: Promise<Response> = fetch(`${api_path}/${userID}/performance`);
+					const promises: Promise<Response>[] = [userR, activityR, avgSessionR, performanceR];
 
-				const responses: Response[] = await Promise.all(promises);
-				let tmpData: any[] = [];
+					const responses: Response[] = await Promise.all(promises);
+					let tmpData: any[] = [];
 
 
 
-				for (let response of responses) {
-					if (!response.ok) {
-						setError(true);
+					for (let response of responses) {
+						if (!response.ok) {
+							setError(true);
+						}
+						else {
+							const json: JSON = await response.json();
+							tmpData.push((json['data']));
+						}
 					}
-					else {
-						const json: JSON = await response.json();
-						tmpData.push((json['data']));
-					}
+
+
+					/* Join all data into one and avoid double propriety */
+					const finalData = tmpData.reduce((acc, obj) => formatObject(acc, obj))
+
+					/* Replace number kind with the accurate name inside data */
+					finalData['data'].map(value => {
+						value['kind'] = finalData['kind'][value['kind']];
+					})
+					/* End replace number kind with accurate name inside data */
+
+					/* sometime todayScore doesn't exists but exists in score propriety so we assign a new propriety todayScore */
+					if (finalData['score']) { finalData['todayScore'] = finalData['score']; }
+
+					setData(finalData);
 				}
-
-
-				/* Join all data into one and avoid double propriety */
-				const finalData = tmpData.reduce((acc, obj) => formatObject(acc, obj))
-
-				/* Replace number kind with the accurate name inside data */
-				finalData['data'].map(value => {
-					value['kind'] = finalData['kind'][value['kind']];
-				})
-				/* End replace number kind with accurate name inside data */
-
-				/* sometime todayScore doesn't exists but exists in score propriety so we assign a new propriety todayScore */
-				if (finalData['score']) { finalData['todayScore'] = finalData['score']; }
-
-				setData(finalData);
+				else {
+					let finalData = {};
+					mockupData.forEach((Data) => {
+						if (Data['id'] === userID) { finalData = Data  } 
+					})
+					console.log(finalData);
+					if (finalData['id']) { setData(finalData) } else { setError(true); }
+				}
 			}
 			catch {
 				setError(true);
