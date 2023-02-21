@@ -28,7 +28,7 @@ import mockupData from "../../mockup.json";
  * - userInfos: {firstName: "Karl", lastName: "Dovnieau", age: 31}
 
  */
-export default function useData(userID: number, ENV_PROD: boolean = false) {
+export default function useData(userID: number, ENV_PROD: boolean = true) {
 
 	const BASE_URL_DEV = "http://localhost:5173/mockup.json"
 	const BASE_URL_PROD = "https://sport-see-backend-9li7kmslm-jerome-marichez.vercel.app/user"
