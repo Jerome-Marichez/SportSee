@@ -18,7 +18,7 @@ import formatData from "../utils/formatData";
  * 
  * data = the object with all details fetch by all API which are (sample): 
  * 
- * - data: [{value: 120, kind: "energy"}]
+ * - data: [{value: 120, kind: "Energie"}]
  * - id: 12
  * - keyData: {calorieCount: 1930, proteinCount: 155, carbohydrateCount: 290, lipidCount: 50}
  * - sessionsLength: [{day: 1, sessionLength: 30}]	 
@@ -33,11 +33,12 @@ export default function useData(userID: number, ENV_PROD: boolean = true) {
 	const BASE_URL_DEV = "http://localhost:5173/mockup.json"
 	const BASE_URL_PROD = "https://sport-see-backend-9li7kmslm-jerome-marichez.vercel.app/user"
 	const api_path = ENV_PROD ? BASE_URL_PROD : BASE_URL_DEV;
-
+	let tmpData: any[] = [];
 
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(false);
 	const [data, setData] = useState<object>({});
+
 
 	useEffect(() => {
 
@@ -54,9 +55,6 @@ export default function useData(userID: number, ENV_PROD: boolean = true) {
 					const promises: Promise<Response>[] = [userR, activityR, avgSessionR, performanceR];
 
 					const responses: Response[] = await Promise.all(promises);
-					let tmpData: any[] = [];
-
-
 
 					for (let response of responses) {
 						if (!response.ok) {
@@ -71,8 +69,9 @@ export default function useData(userID: number, ENV_PROD: boolean = true) {
 					const finalData: object = new formatData(tmpData);
 					setData(finalData);
 				}
+
 				else {
-					let tmpData: any = [];
+
 					mockupData.forEach((data) => {
 						if (data['id'] === userID) { tmpData.push(data) }
 					})
