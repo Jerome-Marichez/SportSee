@@ -49,9 +49,9 @@ export default function Home() {
 								<div className="left-container">
 									<ChartBar data={data["sessionsWeight"]} />
 									<div className="cards-container">
+										<ChartLine data={data["sessionsLength"]} />
 										<ChartRadar data={data["data"]} />
 										<ChartScore score={data["todayScore"]} />
-										<ChartLine data={data["sessionsLength"]} />
 									</div>
 								</div>
 
