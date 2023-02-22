@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import mockupData from "../../mockup.json";
+import formatData from "../utils/formatData";
 
 /**
  * 
@@ -20,7 +21,6 @@ import mockupData from "../../mockup.json";
  * - data: [{value: 120, kind: "energy"}]
  * - id: 12
  * - keyData: {calorieCount: 1930, proteinCount: 155, carbohydrateCount: 290, lipidCount: 50}
- * - kind: { "1": "cardio","2": "energy","3": "endurance","4": "strength","5": "speed","6": "intensity"}
  * - sessionsLength: [{day: 1, sessionLength: 30}]	 
  * - sessionsWeight: [{day: "2020-07-01", kilogram: 80, calories: 240}]
  * - todayScore: 0.12
@@ -28,7 +28,7 @@ import mockupData from "../../mockup.json";
  * - userInfos: {firstName: "Karl", lastName: "Dovnieau", age: 31}
 
  */
-export default function useData(userID: number, ENV_PROD: boolean = false) {
+export default function useData(userID: number, ENV_PROD: boolean = true) {
 
 	const BASE_URL_DEV = "http://localhost:5173/mockup.json"
 	const BASE_URL_PROD = "https://sport-see-backend-9li7kmslm-jerome-marichez.vercel.app/user"
@@ -68,28 +68,19 @@ export default function useData(userID: number, ENV_PROD: boolean = false) {
 						}
 					}
 
-
-					/* Join all data into one and avoid double propriety */
-					const finalData = tmpData.reduce((acc, obj) => formatObject(acc, obj))
-
-					/* Replace number kind with the accurate name inside data */
-					finalData['data'].map(value => {
-						value['kind'] = finalData['kind'][value['kind']];
-					})
-					/* End replace number kind with accurate name inside data */
-
-					/* sometime todayScore doesn't exists but exists in score propriety so we assign a new propriety todayScore */
-					if (finalData['score']) { finalData['todayScore'] = finalData['score']; }
-
+					const finalData: object = new formatData(tmpData);
 					setData(finalData);
 				}
 				else {
-					let finalData = {};
-					mockupData.forEach((Data) => {
-						if (Data['id'] === userID) { finalData = Data  } 
+					let tmpData: any = [];
+					mockupData.forEach((data) => {
+						if (data['id'] === userID) { tmpData.push(data) }
 					})
-					console.log(finalData);
-					if (finalData['id']) { setData(finalData) } else { setError(true); }
+
+					if (tmpData[0]['id']) {
+						const finalData: object = new formatData(tmpData);
+						setData(finalData);
+					} else { setError(true); }
 				}
 			}
 			catch {
@@ -111,25 +102,3 @@ export default function useData(userID: number, ENV_PROD: boolean = false) {
 
 }
 
-
-function formatObject(acc: object, obj: object): object {
-	Object.entries(obj).forEach(([key, value]) => {
-
-		if (acc[key] === undefined) {
-			acc[key] = value;
-		}
-
-		/* avoid double Sessions propriety */
-		if (key === "sessions" && typeof value === "object" && value) {
-			const isInteger = value[0].day;
-			if (!isNaN(isInteger)) {
-				acc["sessionsLength"] = value;
-			}
-			else {
-				acc["sessionsWeight"] = value;
-			}
-		}
-
-	});
-	return acc;
-}

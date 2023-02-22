@@ -38,7 +38,6 @@ export default function CardStat({ type, weight }: CardProps) {
 			break;
 	}
 
-	if (isNaN(weight)) { return null } // Check if weight it's a number before return component
 
 	return (
 		<Stat>
@@ -46,7 +45,7 @@ export default function CardStat({ type, weight }: CardProps) {
 				<img src={svg}></img>
 				<div className="flex-text">
 					<h3>
-						{type === 'Calories' ? formatCalories(weight) : weight}
+						{weight}
 						{type === 'Calories' ? "kCal" : "g"}
 					</h3>
 					<h4>{type}</h4>
@@ -57,15 +56,7 @@ export default function CardStat({ type, weight }: CardProps) {
 
 }
 
-/**
- * @param weight this is the weight of calories as number
- * @example formatCalories(1930) -> return 1,930
- * @returns the weight as a string with a "," after first number
- */
-function formatCalories(weight: number): string {
-	const numAsString = weight.toString(); 
-	return numAsString.charAt(0) + "," + numAsString.slice(1, numAsString.length);
-}
+
 
 const Stat = styled.div`
 	height: 124px;
