@@ -31,9 +31,7 @@ export default function ChartBar({data} : { data: Array<object> }) {
 				</div>
 			</div>
 			<ResponsiveContainer width="100%" height="100%">
-				<BarChart
-					data={data}
-				>
+				<BarChart data={data}>
 					<CartesianGrid strokeDasharray="2 2" horizontal={true}
 						vertical={false} />
 					<XAxis dataKey="name" axisLine={false} tickLine={false} />

@@ -35,7 +35,7 @@ export default function Home() {
 			<>
 				<GlobalStyles />
 				<Header />
-				<div className="theme-btn" onClick={themeToggler}>{theme ? "🌞" : "🌜"}</div>
+				<div className="theme-btn" onClick={themeToggler}>{theme ? "🌜" : "🌞"}</div>
 				{loading ?
 
 					<div className="loading"></div>
